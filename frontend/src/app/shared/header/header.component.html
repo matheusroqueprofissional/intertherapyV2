@@ -1,8 +1,12 @@
-<div class="header">
-    <div class="image">
-        <img src="../" alt="">
-    </div>
-    <div class="content">
-        a*
-    </div>
+<div class="flex align-items-center header justify-content-between gap-4">
+  <div class="image" (click)="redirectTo('')">
+    <img src="../../../assets/images/Intertherapy Logo.svg" alt="">
+  </div>
+  <div class="content flex gap-2 link-container" *ngFor="let link of links; let i = index">
+    <a (click)="redirectTo(link)" (mouseover)="isHovered[i] = true" (mouseout)="isHovered[i] = false">
+      {{link}}
+    </a>
+    <!-- Div que será exibida quando o mouse estiver sobre o link -->
+    <div class="square" *ngIf="isHovered[i]" [ngStyle]="{'background-color': hoverColors[i]}"></div>
+  </div>
 </div>
