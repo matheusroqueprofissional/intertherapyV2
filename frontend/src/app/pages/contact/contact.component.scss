@@ -1,0 +1,11 @@
+.subjectImage {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  background-image: url("../../../assets/images/contact/contactSubject.svg");
+  background-size: cover; /* Garante que a imagem cubra todo o elemento */
+  background-position: center; /* Centraliza a imagem no elemento */
+  background-repeat: no-repeat; /* Impede que a imagem seja repetida */
+  max-width: 100%; /* Faz o elemento ocupar a largura completa do contêiner pai */
+  min-height: 315px; /* Define uma altura mínima de 100% da altura da tela */
+}
