@@ -1,0 +1,18 @@
+@import "./variables.scss";
+@import '../assets/fonts/fonts.scss';
+
+.title{
+  color: $orange;
+  font-size: 54px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+p{
+  font-size: 18px;
+  line-height: 160%;
+  font-family: 'Epilogue',sans-serif;
+}

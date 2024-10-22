@@ -1,0 +1,44 @@
+@import url("../../global.scss");
+
+.content{
+  width: 100%;
+}
+.container{
+  width: 100%;
+  padding: 85px 0 0 0;
+
+  .image{
+    width: auto;
+    padding: 0 115px 0 0;
+  }
+
+  .content{
+    width: 100%;
+    padding: 0 45px 0 115px;
+    .paragraphs{
+      .subparagraph{
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.vision_and_values{
+  width: 100%;
+  gap: 20px;
+
+  .vision,.values{
+    background-color: white;
+    border: 1px solid #000000;
+    height: auto;
+    border-radius: 11px;
+    min-width: 650px;
+    max-width: 650px;
+  }
+  .values{
+    padding: 32px 32px 0 38px;
+  }
+  .vision{
+    padding: 32px 137px 0 38px;
+  }
+}
