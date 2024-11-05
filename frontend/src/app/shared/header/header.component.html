@@ -1,6 +1,8 @@
 <div class="col-12 header flex align-items-center gap-4 flex-wrap ">
   <div class="image">
-    <img  (click)="redirectTo('')" src="../../../assets/images/Intertherapy Logo.svg" alt="">
+    <img
+    loading="eager"
+    (click)="redirectTo('')" src="../../../assets/images/Intertherapy Logo.svg" alt="">
   </div>
   <div class="content flex gap-2  justify-content-end">
     <div class="link-container" *ngFor="let link of links; let i = index">

@@ -1,44 +1,54 @@
-.container{
+@import "../../../assets/fonts/fonts.scss";
+.container {
+  display: flex;
+  .content {
     display: flex;
-    justify-content: space-between
-}
-.contato, .redes, .mapa, .imagem{
-   padding-left: 100px;
-   padding-right: 100px;
-    width: 25%;
-}
+    gap: 217px;
+    padding: 0 0 0 217px;
+    .mapa {
+      align-items: left;
+      justify-content: center;
+    }
+    .redes {
+      a {
+        align-items: center;
+        display: flex;
+      }
+    }
 
-a{
-    display: block;
-    color: black;
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        padding: 0;
+      }
+    }
+  }
+
+  h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    letter-spacing: 3.5%;
+  }
+
+  a {
     text-decoration: none;
-}
-.container2{
-    display: flex;
-    justify-content: space-between;
-    background-color: greenyellow;
-    padding: 20px; 
-    border-radius: 8px; 
-    width: 2000px; 
-    text-align:center;
-
-}
-.copy, .endereço, .contact{
-    width: 33%; 
-    padding-left: 100px;
-   padding-right: 100px;
-
-}
-a{
-    display: block;
-}
-.mapa{
-    font-size: 15px; 
-    line-height: 1.0;
-}
-ul{
-    list-style: circle;
+    color: black;
+  }
 }
 
-
-    
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  background-color: greenyellow;
+  padding: 20px 0 20px 0;
+  border-radius: 8px;
+  width: 100%;
+  text-align: center;
+  .copy{
+    padding: 0 0 0 115px;
+  }
+  .contact{
+    padding: 0 115px 0 0 ;
+  }
+}
