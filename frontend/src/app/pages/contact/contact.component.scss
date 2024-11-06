@@ -1,4 +1,5 @@
 @import url('../../../assets/fonts/fonts.scss');
+
 .subjectImage {
   display: flex;
   align-items: center;
@@ -18,4 +19,93 @@
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 3.5px;
   }
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 20px; /* Maior espaçamento ao redor */
+}
+
+.form-section {
+  flex: 1;
+  margin-right: 20px;
+  padding: 30px;
+  border-radius: 8px;
+
+  h2 {
+    color: #f25c05; /* Cor laranja para o título */
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+
+  button {
+    background-color: #f25c05; /* Cor laranja do botão */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #d14a04; /* Cor mais escura ao passar o mouse */
+  }
+}
+
+.image-section {
+  flex: 1;
+  max-width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordas arredondadas na imagem */
+  }
+}
+
+footer {
+  background-color: #5dc160;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  .form-section {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+textarea {
+  resize: none; /* Desabilita a opção de redimensionar a área de texto */
 }

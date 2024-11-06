@@ -1,3 +1,33 @@
 <div class="subjectImage">
   <h1>FALE CONOSCO</h1>
 </div>
+
+<div class="contact-container">
+  <section class="form-section">
+    <h2>CONTATE-NOS</h2>
+    <form id="contact-form">
+        <label for="name">Nome completo:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+        <label for="contact-reason">Motivo do contato:</label>
+        <select id="contact-reason" name="reason">
+            <option value="">Selecione o motivo</option>
+            <option value="informacao">Informação</option>
+            <option value="suporte">Suporte</option>
+            <option value="outras">Outras</option>
+        </select>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <div class="image-section">
+    <img src="assets/images/contact/mapa.png" alt="Descrição da imagem"> <!-- Altere 'sua_imagem.jpg' para o nome real da sua imagem -->
+  </div>
+</div>
