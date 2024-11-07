@@ -1,6 +1,4 @@
-<app-header></app-header>
-<angular-vlibras
-  position="right"
-  avatar="hosana" />
+<app-header *ngIf="exibirHeaderFooter"></app-header>
+<angular-vlibras position="right" avatar="hosana"></angular-vlibras>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="exibirHeaderFooter"></app-footer>

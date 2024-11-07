@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
 import { AngularVlibras } from 'angular-vlibras';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -15,14 +15,16 @@ import { getAnalytics } from "firebase/analytics";
   styleUrl: './app.component.scss'
 })
 
-
-
-
-
 export class AppComponent {
-
-
-
+  exibirHeaderFooter = true;
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Ajuste a rota específica que não terá header/footer
+        this.exibirHeaderFooter = event.url !== '/login';
+      }
+    });
+  }
 
   title = 'frontend';
 }
