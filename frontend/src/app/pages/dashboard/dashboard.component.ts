@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { AngularVlibras } from 'angular-vlibras';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AngularVlibras],
+  imports: [MatIcon],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

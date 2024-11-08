@@ -2,13 +2,11 @@
 .container {
   margin: 0 auto;
   padding: 0 20px;
-
   .carousel {
     position: relative;
     max-width: 100%;
     margin: auto;
     overflow: hidden;
-
     .carousel-images {
       display: flex;
       transition: transform 0.5s ease;
@@ -83,7 +81,6 @@
     width: 100%;
     padding: 40px 20px;
     background-color: rgba(255, 255, 255, 0.85);
-    background-image: url("/assets/images/especialidades/fundo_azul.jpeg");
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
