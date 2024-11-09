@@ -1,175 +1,145 @@
 {
-    "main-page": {
-      "en": "Main Page",
-      "pt": "Página Principal"
+  "mainPage": {
+    "ourMission": {
+      "title": "NOSSA MISSÃO",
+      "description": "Atender as necessidades de nossos pacientes, superar expectativas e realizar desejos são a nossa maior missão. Queremos oferecer muito mais do que métodos e técnicas na área de Neuroreabilitação Infantil e Adulto, por meio de um atendimento humanizado, especializado e interdisciplinar, promovendo o máximo desenvolvimento do potencial de pessoas com deficiência, permitindo que cada uma delas e suas famílias desfrutem ainda mais intensamente do prazer de viver."
     },
-    "our-mission": {
-      "en": "OUR MISSION",
-      "pt": "NOSSA MISSÃO"
+    "targetAudience": {
+      "title": "Público-alvo",
+      "content": [
+        "Pacientes pediátricos e adultos com algum tipo de condição neurológica;",
+        "Atrasos no desenvolvimento;",
+        "Síndromes genéticas (Síndrome de Down, doenças raras);",
+        "Deficiência intelectual;",
+        "Autismo (ASD);",
+        "Outros distúrbios do sistema neurológico;"
+      ]
     },
-    "mission-description": {
-      "en": "Meeting the needs of our patients, exceeding expectations and fulfilling desires are our greatest mission. We want to offer much more than methods and techniques in the area of Child and Adult Neurohabilitation, through humanized, specialized and interdisciplinary care, the maximum development of the potential of people with disabilities, allowing each of them and their families to enjoy the pleasure of living even more intensely.",
-      "pt": "Atender as necessidades de nossos pacientes, superar expectativas e realizar desejos são nossa maior missão. Queremos oferecer muito mais do que métodos e técnicas na área de Neuroreabilitação Infantil e Adulto, por meio de atendimento humanizado, especializado e interdisciplinar, o máximo desenvolvimento do potencial das pessoas com deficiência, permitindo que cada um deles e suas famílias desfrutem do prazer de viver ainda mais intensamente."
+    "ourSpecialties": {
+      "title": "NOSSAS ESPECIALIDADES",
+      "physiotherapy": {
+        "title": "FISIOTERAPIA",
+        "description": "Melhorar a função física e a qualidade de vida dos indivíduos, por meio de técnicas e exercícios específicos."
+      },
+      "occupationalTherapy": {
+        "title": "TERAPIA OCUPACIONAL",
+        "description": "Promover a independência funcional e a qualidade de vida, por meio de intervenções que buscam melhorar as habilidades motoras, cognitivas e emocionais."
+      },
+      "speechTherapy": {
+        "title": "FONOAUDIOLOGIA",
+        "description": "Avaliar, diagnosticar e tratar distúrbios de comunicação, linguagem, deglutição e voz, com o objetivo de melhorar a função e a qualidade de vida dos pacientes."
+      },
+      "psychology": {
+        "title": "PSICOLOGIA",
+        "description": "Compreender e tratar os aspectos emocionais, cognitivos e comportamentais, visando melhorar o bem-estar e a qualidade de vida dos indivíduos e suas famílias."
+      },
+      "psychopedagogy": {
+        "title": "PSICOPEDAGOGIA",
+        "description": "Compreender e intervir nos processos de aprendizagem, oferecendo estratégias para o desenvolvimento das habilidades educacionais e cognitivas."
+      },
+      "psychomotricity": {
+        "title": "PSICOMOTRICIDADE",
+        "description": "Utilizar o movimento e a expressão corporal para promover o desenvolvimento global da pessoa, integrando aspectos cognitivos, emocionais e motores."
+      }
     },
-    "target-audience": {
-      "en": "Target audience",
-      "pt": "Público-alvo"
-    },
-    "target-audience-description": {
-      "en": "Pediatric and adult patients with some type of neurological condition; Developmental delays; Genetic syndromes (Down syndrome, rare diseases); Intellectual disability; Autism (ASD); Other neurological system disorders.",
-      "pt": "Pacientes pediátricos e adultos com algum tipo de condição neurológica; Atrasos no desenvolvimento; Síndromes genéticas (Síndrome de Down, doenças raras); Deficiência intelectual; Autismo (TEA); Outros distúrbios do sistema neurológico."
-    },
-    "our-specialties": {
-      "en": "OUR SPECIALTIES",
-      "pt": "NOSSAS ESPECIALIDADES"
-    },
-    "physiotherapy": {
-      "en": "PHYSIOTHERAPY",
-      "pt": "FISIOTERAPIA"
-    },
-    "occupational-therapy": {
-      "en": "OCCUPATIONAL THERAPY",
-      "pt": "TERAPIA OCUPACIONAL"
-    },
-    "speech-therapy": {
-      "en": "SPEECH THERAPY",
-      "pt": "FONOAUDIOLOGIA"
-    },
-    "psychology": {
-      "en": "PSYCHOLOGY",
-      "pt": "PSICOLOGIA"
-    },
-    "psychopedagogy": {
-      "en": "PSYCHOPEDAGOGY",
-      "pt": "PSICOPEDAGOGIA"
-    },
-    "psychomotricity": {
-      "en": "PSYCHOMOTRICITY",
-      "pt": "PSICOMOTRICIDADE"
-    },
-    "photo-gallery": {
-      "en": "PHOTO GALLERY",
-      "pt": "GALERIA DE FOTOS"
-    },
-    "about-us": {
-      "en": "ABOUT US",
-      "pt": "SOBRE NÓS"
-    },
-    "history": {
-      "en": "The Intertherapy Clinic was founded by Physiotherapist Tatiane Tedeschi Roque on January 14, 2019 and offers interdisciplinary services.",
-      "pt": "A Clínica Intertherapy foi fundada pela Fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019 e oferece serviços interdisciplinares."
-    },
-    "why-intertherapy": {
-      "en": "INTERTHERAPY: feminine noun that conveys the idea of relationships, exchanges, coordination, partnerships, contributions between areas and people",
-      "pt": "INTERTHERAPY: substantivo feminino que transmite a ideia de relacionamentos, trocas, coordenação, parcerias, contribuições entre áreas e pessoas"
+    "aboutUs": {
+      "title": "SOBRE NÓS",
+      "history": {
+        "title": "HISTÓRIA",
+        "description": "A Clínica Intertherapy foi fundada pela fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019 e oferece serviços interdisciplinar. Tatiane, fundadora e diretora da clínica, trabalha na área de reabilitação neurofuncional desde 2009 e, ao longo de sua carreira, especializou-se em métodos voltados para o tratamento neurológico como o Método Therasuit, com experiências no exterior, estimulação por Corrente Direta TDCS, o Conceito Neuroevolutivo Bobath Pediátrico, entre outros."
+      },
+      "whyIntertherapy": {
+        "title": "Por que Intertherapy?",
+        "description": "INTERTHERAPY: substantivo feminino que transmite a ideia de relações, trocas, coordenação, parcerias, contribuições entre áreas e pessoas. Inter = Interdisciplinaridade; Therapy = refere-se à ideia de terapia / Thera = representando a história da nossa equipe por meio da ação com protocolos intensivos."
+      }
     },
     "vision": {
-      "en": "To be a reference in the area of Neurohabilitation by offering differentiated interdisciplinary therapeutic support, with specificity and excellence, fully meeting the needs of our patients and their families, ensuring that each story is individually unique and rich in details within our therapeutic follow-up.",
-      "pt": "Ser uma referência na área de Neuroreabilitação, oferecendo suporte terapêutico interdisciplinar diferenciado, com especificidade e excelência, atendendo integralmente as necessidades de nossos pacientes e suas famílias, garantindo que cada história seja individualmente única e rica em detalhes dentro do nosso acompanhamento terapêutico."
+      "title": "VISÃO",
+      "description": "Ser referência na área de Neuroreabilitação, oferecendo suporte terapêutico interdisciplinar diferenciado, com especificidade e excelência, atendendo plenamente às necessidades dos nossos pacientes e suas famílias, garantindo que cada história seja única e rica em detalhes dentro do nosso acompanhamento terapêutico."
     },
     "values": {
-      "en": "VALUES",
-      "pt": "VALORES"
+      "title": "VALORES",
+      "valuesList": [
+        "Interdisciplinaridade",
+        "Sensibilidade",
+        "Recepção",
+        "Ética",
+        "Especificidade",
+        "Comprometimento",
+        "Objetividade",
+        "Foco",
+        "Conhecimento",
+        "Dedicação",
+        "Amor"
+      ]
     },
-    "interdisciplinarity": {
-      "en": "Interdisciplinarity",
-      "pt": "Interdisciplinaridade"
+    "ourSpace": {
+      "title": "NOSSO ESPAÇO"
     },
-    "sensitivity": {
-      "en": "Sensitivity",
-      "pt": "Sensibilidade"
+    "ourServices": {
+      "title": "NOSSOS SERVIÇOS",
+      "physiotherapyAssessment": {
+        "title": "1-) Avaliação Fisioterapêutica em Neurologia",
+        "description": "Esta avaliação abrange a análise dos principais marcos de desenvolvimento nos aspectos sensório-motores. A análise das principais estruturas clínicas é enfatizada, como: força muscular, tônus, condição musculoesquelética, reflexos primitivos, reações protetoras e equilíbrio, entre outros. Quando necessário, são utilizadas ferramentas para análise complementar, como avaliação de baropodometria, análise de marcha, entre outras."
+      },
+      "treatments": {
+        "title": "TRATAMENTOS",
+        "therasuitMethod": {
+          "title": "Método Therasuit",
+          "description": "O TheraSuit é um método terapêutico intensivo utilizado no tratamento de crianças e adultos com distúrbios neuromotores."
+        },
+        "etccTdcs": {
+          "title": "ETCC/TDCS",
+          "description": "O protocolo TDCS é uma abordagem terapêutica que utiliza estimulação elétrica de baixa intensidade aplicada diretamente no cérebro para modular a atividade neuronal."
+        },
+        "locomotorTraining": {
+          "title": "Treinamento Locomotor",
+          "description": "É uma abordagem terapêutica utilizada no tratamento de distúrbios neuromotores, como lesões na medula espinhal, paralisia cerebral e acidente vascular cerebral."
+        },
+        "bobathNeuroevolutionaryConcept": {
+          "title": "Conceito Neuroevolutivo Bobath",
+          "description": "É uma abordagem terapêutica usada na reabilitação de indivíduos com distúrbios neuromotores e se baseia no entendimento dos princípios da neuroplasticidade."
+        },
+        "lasertherapy": {
+          "title": "Laserterapia",
+          "description": "É uma técnica utilizada na fonoaudiologia como parte do tratamento de diversas condições relacionadas à saúde vocal e auditiva."
+        },
+        "virtualReality": {
+          "title": "Realidade Virtual - VR",
+          "description": "É uma abordagem terapêutica que utiliza tecnologia de realidade virtual para melhorar os resultados do tratamento e proporcionar uma experiência imersiva aos pacientes."
+        },
+        "sensoryIntegration": {
+          "title": "Integração Sensorial",
+          "description": "É uma abordagem terapêutica desenvolvida por Jean Ayres que visa melhorar a forma como o cérebro processa e integra as informações sensoriais."
+        },
+        "aba": {
+          "title": "ABA",
+          "description": "É uma abordagem terapêutica que busca promover o aprendizado e o desenvolvimento de habilidades sociais, acadêmicas e funcionais."
+        },
+        "podd": {
+          "title": "PODD",
+          "description": "O PODD utiliza pictogramas, palavras e frases organizadas de forma estruturada e visualmente acessível. Opera por meio de um sistema robusto e universal de comunicação."
+        }
+      }
     },
-    "reception": {
-      "en": "Reception",
-      "pt": "Recepção"
-    },
-    "ethics": {
-      "en": "Ethics",
-      "pt": "Ética"
-    },
-    "specificity": {
-      "en": "Specificity",
-      "pt": "Especificidade"
-    },
-    "commitment": {
-      "en": "Commitment",
-      "pt": "Compromisso"
-    },
-    "objectivity": {
-      "en": "Objectivity",
-      "pt": "Objetividade"
-    },
-    "focus": {
-      "en": "Focus",
-      "pt": "Foco"
-    },
-    "knowledge": {
-      "en": "Knowledge",
-      "pt": "Conhecimento"
-    },
-    "dedication": {
-      "en": "Dedication",
-      "pt": "Dedicação"
-    },
-    "love": {
-      "en": "Love",
-      "pt": "Amor"
-    },
-    "our-space": {
-      "en": "OUR SPACE",
-      "pt": "NOSSO ESPAÇO"
-    },
-    "our-services": {
-      "en": "OUR SERVICES",
-      "pt": "NOSSOS SERVIÇOS"
-    },
-    "physiotherapy-assessment": {
-      "en": "Physiotherapy Assessment in Neurology",
-      "pt": "Avaliação Fisioterápica em Neurologia"
-    },
-    "therasuit-method": {
-      "en": "Therasuit Method",
-      "pt": "Método Therasuit"
-    },
-    "etcc-tdcs": {
-      "en": "ETCC/TDCS",
-      "pt": "ETCC/TDCS"
-    },
-    "locomotor-training": {
-      "en": "Locomotor Training",
-      "pt": "Treinamento Locomotor"
-    },
-    "bobath-concept": {
-      "en": "Bobath Neuroevolutionary Concept",
-      "pt": "Conceito Neuroevolutivo Bobath"
-    },
-    "lasertherapy": {
-      "en": "Lasertherapy",
-      "pt": "Laserterapia"
-    },
-    "virtual-reality": {
-      "en": "Virtual Reality VR",
-      "pt": "Realidade Virtual VR"
-    },
-    "sensory-integration": {
-      "en": "Sensory Integration",
-      "pt": "Integração Sensorial"
-    },
-    "aba": {
-      "en": "ABA",
-      "pt": "ABA"
-    },
-    "podd": {
-      "en": "PODD",
-      "pt": "PODD"
-    },
-    "physiotherapist-tatiane-tedeschi": {
-      "en": "Tatiane, director of Clínica Intertherapy, is a dedicated professional who is passionate about what she does. Twenty years ago, its history with Neuropediatrics began and since then, its mission has been to provide health, well-being and quality of life for children and their families.",
-      "pt": "Tatiane, diretora da Clínica Intertherapy, é uma profissional dedicada e apaixonada pelo que faz. Há 20 anos, sua história com a Neuropediatria começou e, desde então, sua missão tem sido proporcionar saúde, bem-estar e qualidade de vida para crianças e suas famílias."
-    },
-    "physiotherapist-anne-michelli": {
-      "en": "Introducing Auntie Anne, our physiotherapist at Clinica Intertherapy! With training in Physiotherapy since 2016 and currently a PhD candidate in Rehabilitation Sciences, Anne is a dedicated and communicative professional who is always committed to helping her patients.",
-      "pt": "Apresentando a Tia Anne, nossa fisioterapeuta na Clínica Intertherapy! Com formação em Fisioterapia desde 2016 e atualmente candidata ao doutorado em Ciências da Reabilitação, Anne é uma profissional dedicada e comunicativa, sempre comprometida em ajudar seus pacientes."
+    "contactUs": {
+      "title": "CONTATE-NOS",
+      "fields": {
+        "name": "NOME",
+        "email": "E-MAIL",
+        "reason": "RAZÃO PARA CONTATO",
+        "message": "MENSAGEM",
+        "businessHours": "HORÁRIO DE FUNCIONAMENTO",
+        "mondayToFriday": "SEGUNDA A SEXTA",
+        "telephone": "TELEFONE",
+        "siteMap": "MAPA DO SITE",
+        "aboutUs": "SOBRE NÓS",
+        "services": "SERVIÇOS",
+        "team": "EQUIPE",
+        "contactUs": "CONTATE-NOS",
+        "talkToUs": "FALE CONOSCO",
+        "socialMedia": "MÍDIAS SOCIAIS"
+      }
     }
+  }
 }
-  
