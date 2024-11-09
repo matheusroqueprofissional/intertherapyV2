@@ -1,175 +1,117 @@
 {
-    "main-page": {
-      "en": "Main Page",
-      "pt": "Página Principal"
+  "mainPage": {
+    "ourMission": {
+      "title": "OUR MISSION",
+      "text": "Meeting the needs of our patients, exceeding expectations and fulfilling desires are our greatest mission..."
     },
-    "our-mission": {
-      "en": "OUR MISSION",
-      "pt": "NOSSA MISSÃO"
+    "targetAudience": {
+      "title": "Target audience",
+      "text": [
+        "Pediatric and adult patients with some type of neurological condition",
+        "Developmental delays",
+        "Genetic syndromes (Down syndrome, rare diseases)",
+        "Intellectual disability",
+        "Autism (ASD)",
+        "Other neurological system disorders"
+      ]
     },
-    "mission-description": {
-      "en": "Meeting the needs of our patients, exceeding expectations and fulfilling desires are our greatest mission. We want to offer much more than methods and techniques in the area of Child and Adult Neurohabilitation, through humanized, specialized and interdisciplinary care, the maximum development of the potential of people with disabilities, allowing each of them and their families to enjoy the pleasure of living even more intensely.",
-      "pt": "Atender as necessidades de nossos pacientes, superar expectativas e realizar desejos são nossa maior missão. Queremos oferecer muito mais do que métodos e técnicas na área de Neuroreabilitação Infantil e Adulto, por meio de atendimento humanizado, especializado e interdisciplinar, o máximo desenvolvimento do potencial das pessoas com deficiência, permitindo que cada um deles e suas famílias desfrutem do prazer de viver ainda mais intensamente."
-    },
-    "target-audience": {
-      "en": "Target audience",
-      "pt": "Público-alvo"
-    },
-    "target-audience-description": {
-      "en": "Pediatric and adult patients with some type of neurological condition; Developmental delays; Genetic syndromes (Down syndrome, rare diseases); Intellectual disability; Autism (ASD); Other neurological system disorders.",
-      "pt": "Pacientes pediátricos e adultos com algum tipo de condição neurológica; Atrasos no desenvolvimento; Síndromes genéticas (Síndrome de Down, doenças raras); Deficiência intelectual; Autismo (TEA); Outros distúrbios do sistema neurológico."
-    },
-    "our-specialties": {
-      "en": "OUR SPECIALTIES",
-      "pt": "NOSSAS ESPECIALIDADES"
-    },
-    "physiotherapy": {
-      "en": "PHYSIOTHERAPY",
-      "pt": "FISIOTERAPIA"
-    },
-    "occupational-therapy": {
-      "en": "OCCUPATIONAL THERAPY",
-      "pt": "TERAPIA OCUPACIONAL"
-    },
-    "speech-therapy": {
-      "en": "SPEECH THERAPY",
-      "pt": "FONOAUDIOLOGIA"
-    },
-    "psychology": {
-      "en": "PSYCHOLOGY",
-      "pt": "PSICOLOGIA"
-    },
-    "psychopedagogy": {
-      "en": "PSYCHOPEDAGOGY",
-      "pt": "PSICOPEDAGOGIA"
-    },
-    "psychomotricity": {
-      "en": "PSYCHOMOTRICITY",
-      "pt": "PSICOMOTRICIDADE"
-    },
-    "photo-gallery": {
-      "en": "PHOTO GALLERY",
-      "pt": "GALERIA DE FOTOS"
-    },
-    "about-us": {
-      "en": "ABOUT US",
-      "pt": "SOBRE NÓS"
-    },
+    "ourSpecialties": {
+      "title": "OUR SPECIALTIES",
+      "specialties": [
+        {"title": "PHYSIOTHERAPY", "description": "Improve the physical function and quality of life of individuals..."},
+        {"title": "OCCUPATIONAL THERAPY", "description": "Promote functional independence and quality of life..."},
+        {"title": "SPEECH THERAPY", "description": "Assess, diagnose, and treat communication, language, swallowing..."},
+        {"title": "PSYCHOLOGY", "description": "Understand and treat emotional, cognitive, and behavioral aspects..."},
+        {"title": "PSYCHOPEDAGOGY", "description": "Understand and intervene in learning processes..."},
+        {"title": "PSYCHOMOTRICITY", "description": "Use movement and body expression to promote the person’s global development..."}
+      ]
+    }
+  },
+  "aboutUs": {
     "history": {
-      "en": "The Intertherapy Clinic was founded by Physiotherapist Tatiane Tedeschi Roque on January 14, 2019 and offers interdisciplinary services.",
-      "pt": "A Clínica Intertherapy foi fundada pela Fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019 e oferece serviços interdisciplinares."
+      "title": "ABOUT US - HISTORY",
+      "text": "The Intertherapy Clinic was founded by physiotherapist Tatiane Tedeschi Roque on January 14, 2019..."
     },
-    "why-intertherapy": {
-      "en": "INTERTHERAPY: feminine noun that conveys the idea of relationships, exchanges, coordination, partnerships, contributions between areas and people",
-      "pt": "INTERTHERAPY: substantivo feminino que transmite a ideia de relacionamentos, trocas, coordenação, parcerias, contribuições entre áreas e pessoas"
+    "whyIntertherapy": {
+      "title": "Why Intertherapy?",
+      "text": "INTERTHERAPY: a feminine noun that conveys the idea of relationships, exchanges..."
     },
     "vision": {
-      "en": "To be a reference in the area of Neurohabilitation by offering differentiated interdisciplinary therapeutic support, with specificity and excellence, fully meeting the needs of our patients and their families, ensuring that each story is individually unique and rich in details within our therapeutic follow-up.",
-      "pt": "Ser uma referência na área de Neuroreabilitação, oferecendo suporte terapêutico interdisciplinar diferenciado, com especificidade e excelência, atendendo integralmente as necessidades de nossos pacientes e suas famílias, garantindo que cada história seja individualmente única e rica em detalhes dentro do nosso acompanhamento terapêutico."
+      "title": "VISION",
+      "text": "To be a reference in the area of Neurohabilitation by offering differentiated interdisciplinary therapeutic support..."
     },
     "values": {
-      "en": "VALUES",
-      "pt": "VALORES"
-    },
-    "interdisciplinarity": {
-      "en": "Interdisciplinarity",
-      "pt": "Interdisciplinaridade"
-    },
-    "sensitivity": {
-      "en": "Sensitivity",
-      "pt": "Sensibilidade"
-    },
-    "reception": {
-      "en": "Reception",
-      "pt": "Recepção"
-    },
-    "ethics": {
-      "en": "Ethics",
-      "pt": "Ética"
-    },
-    "specificity": {
-      "en": "Specificity",
-      "pt": "Especificidade"
-    },
-    "commitment": {
-      "en": "Commitment",
-      "pt": "Compromisso"
-    },
-    "objectivity": {
-      "en": "Objectivity",
-      "pt": "Objetividade"
-    },
-    "focus": {
-      "en": "Focus",
-      "pt": "Foco"
-    },
-    "knowledge": {
-      "en": "Knowledge",
-      "pt": "Conhecimento"
-    },
-    "dedication": {
-      "en": "Dedication",
-      "pt": "Dedicação"
-    },
-    "love": {
-      "en": "Love",
-      "pt": "Amor"
-    },
-    "our-space": {
-      "en": "OUR SPACE",
-      "pt": "NOSSO ESPAÇO"
-    },
-    "our-services": {
-      "en": "OUR SERVICES",
-      "pt": "NOSSOS SERVIÇOS"
-    },
-    "physiotherapy-assessment": {
-      "en": "Physiotherapy Assessment in Neurology",
-      "pt": "Avaliação Fisioterápica em Neurologia"
-    },
-    "therasuit-method": {
-      "en": "Therasuit Method",
-      "pt": "Método Therasuit"
-    },
-    "etcc-tdcs": {
-      "en": "ETCC/TDCS",
-      "pt": "ETCC/TDCS"
-    },
-    "locomotor-training": {
-      "en": "Locomotor Training",
-      "pt": "Treinamento Locomotor"
-    },
-    "bobath-concept": {
-      "en": "Bobath Neuroevolutionary Concept",
-      "pt": "Conceito Neuroevolutivo Bobath"
-    },
-    "lasertherapy": {
-      "en": "Lasertherapy",
-      "pt": "Laserterapia"
-    },
-    "virtual-reality": {
-      "en": "Virtual Reality VR",
-      "pt": "Realidade Virtual VR"
-    },
-    "sensory-integration": {
-      "en": "Sensory Integration",
-      "pt": "Integração Sensorial"
-    },
-    "aba": {
-      "en": "ABA",
-      "pt": "ABA"
-    },
-    "podd": {
-      "en": "PODD",
-      "pt": "PODD"
-    },
-    "physiotherapist-tatiane-tedeschi": {
-      "en": "Tatiane, director of Clínica Intertherapy, is a dedicated professional who is passionate about what she does. Twenty years ago, its history with Neuropediatrics began and since then, its mission has been to provide health, well-being and quality of life for children and their families.",
-      "pt": "Tatiane, diretora da Clínica Intertherapy, é uma profissional dedicada e apaixonada pelo que faz. Há 20 anos, sua história com a Neuropediatria começou e, desde então, sua missão tem sido proporcionar saúde, bem-estar e qualidade de vida para crianças e suas famílias."
-    },
-    "physiotherapist-anne-michelli": {
-      "en": "Introducing Auntie Anne, our physiotherapist at Clinica Intertherapy! With training in Physiotherapy since 2016 and currently a PhD candidate in Rehabilitation Sciences, Anne is a dedicated and communicative professional who is always committed to helping her patients.",
-      "pt": "Apresentando a Tia Anne, nossa fisioterapeuta na Clínica Intertherapy! Com formação em Fisioterapia desde 2016 e atualmente candidata ao doutorado em Ciências da Reabilitação, Anne é uma profissional dedicada e comunicativa, sempre comprometida em ajudar seus pacientes."
+      "title": "VALUES",
+      "list": [
+        "Interdisciplinarity",
+        "Sensitivity",
+        "Reception",
+        "Ethics",
+        "Specificity",
+        "Commitment",
+        "Objectivity",
+        "Focus",
+        "Knowledge",
+        "Dedication",
+        "Love"
+      ]
     }
- }
-  
+  },
+  "services": {
+    "physiotherapy": {
+      "title": "PHYSIOTHERAPY",
+      "description": "Physiotherapy Assessment in Neurology: This assessment encompasses the analysis of the main developmental milestones in sensorimotor aspects..."
+    },
+    "treatments": {
+      "title": "TREATMENTS",
+      "list": [
+        "Therasuit Method",
+        "ETCC/TDCS",
+        "Locomotor Training",
+        "Bobath Neuroevolutionary Concept",
+        "Lasertherapy",
+        "Virtual Reality – VR",
+        "Sensory Integration",
+        "ABA",
+        "PODD"
+      ]
+    }
+  },
+  "team": {
+    "tatianeTedeschi": {
+      "title": "PHYSIOTHERAPIST: TATIANE TEDESCHI",
+      "description": "Tatiane, director of Clínica Intertherapy, is a dedicated professional who is passionate about what she does..."
+    },
+    "anneMichelli": {
+      "title": "PHYSIOTHERAPIST: ANNE MICHELLI FONTES",
+      "description": "Introducing Auntie Anne, our physiotherapist at Clinica Intertherapy! With training in Physiotherapy since 2016..."
+    },
+    "arianeAnanias": {
+      "title": "PHYSIOTHERAPIST: ARIANE ANANIAS",
+      "description": "Introducing Tia Ari, the physical therapist who loves what she does at Intertherapy! She has always had a special passion for children..."
+    },
+    "biancaCarnelos": {
+      "title": "PHYSIOTHERAPIST: BIANCA CARNELOS",
+      "description": "Bianca is an incredible physiotherapist and dancer passionate about movement. Graduated from Fundação Hermínio Ometto..."
+    }
+  },
+  "contact": {
+    "title": "CONTACT US",
+    "fields": {
+      "name": "NAME",
+      "email": "E-MAIL",
+      "reason": "REASON FOR CONTACT",
+      "message": "MESSAGE",
+      "businessHours": "BUSINESS HOURS",
+      "mondayToFriday": "MONDAY TO FRIDAY",
+      "telephone": "TELEPHONE",
+      "siteMap": "SITE MAP",
+      "aboutUs": "ABOUT US",
+      "services": "SERVICES",
+      "team": "TEAM",
+      "contactUs": "CONTACT US",
+      "talkToUs": "TALK TO US",
+      "socialMedia": "SOCIAL MEDIA"
+    }
+  }
+}
