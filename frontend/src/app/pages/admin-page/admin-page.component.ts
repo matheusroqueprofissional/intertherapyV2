@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CanActivate } from '@angular/router';
+import { authGuard } from '../../auth.guard';
 
 @Component({
   selector: 'app-admin-page',

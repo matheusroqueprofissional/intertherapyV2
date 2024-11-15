@@ -1,12 +1,16 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  <label>
-    Email:
-    <input type="email" formControlName="email" />
-  </label>
-  <label>
-    Password:
-    <input type="password" formControlName="password" />
-  </label>
-  <button type="submit" [disabled]="loginForm.invalid">Login</button>
-</form>
-<p *ngIf="errorMessage">{{ errorMessage }}</p>
+<div class="square">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <img src="../../../assets/images/Intertherapy Logo.svg" alt="">
+    <label>
+      Email:
+      <input type="email" formControlName="email" />
+    </label>
+    <label>
+      Password:
+      <input type="password" formControlName="password" />
+    </label>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
+<a href="/">Menu principal</a>

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
@@ -5,34 +6,9 @@ import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
-  template: `
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <label>
-        Email:
-        <input type="email" formControlName="email" />
-      </label>
-      <label>
-        Password:
-        <input type="password" formControlName="password" />
-      </label>
-      <button type="submit" [disabled]="loginForm.invalid">Login</button>
-    </form>
-    <p *ngIf="errorMessage">{{ errorMessage }}</p>
-  `,
-  styles: [`
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 300px;
-    }
-    label {
-      margin-bottom: 1em;
-    }
-    button {
-      margin-top: 1em;
-    }
-  `],
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './login.component.html',
+  styleUrl:'./login.component.scss'
 })
 export class LoginComponent {
   loginForm: FormGroup;
