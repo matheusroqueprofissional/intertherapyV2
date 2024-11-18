@@ -1,20 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-
+import { Auth } from '@angular/fire/auth';
+import {
+  Router,
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+} from '@angular/router';
 import { Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class authGuard implements CanActivate {
-  constructor(private router: Router) { }
+export class AuthGuard implements CanActivate {
+  constructor(private router: Router, private auth: Auth) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-    alert('Sem autorização para acessar a rota.');
-    this.router.navigate(['']);
-    return false;
+    state: RouterStateSnapshot
+  ): Observable<boolean> {
+    // Usando o authState que retorna um Observable
+    return this.auth.authStateReady.pipe(
+      take(1), // Apenas o primeiro valor
+      map((user) => {
+        if (user) {
+          return true; // Usuário autenticado
+        } else {
+          this.router.navigate(['/login'], {
+            queryParams: { returnUrl: state.url }, // Salva a URL original
+          });
+          return false; // Usuário não autenticado
+        }
+      })
+    );
   }
 }

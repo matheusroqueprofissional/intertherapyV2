@@ -29,7 +29,8 @@ export class AppComponent implements OnInit{
     '/about',
     '/services',
     '/team',
-    '/contact'];
+    '/contact',
+    '/admin'];
 
   constructor(private router: Router) {}
 
