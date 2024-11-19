@@ -77,24 +77,6 @@
       ]
     }
   },
-  "team": {
-    "tatianeTedeschi": {
-      "title": "PHYSIOTHERAPIST: TATIANE TEDESCHI",
-      "description": "Tatiane, director of Clínica Intertherapy, is a dedicated professional who is passionate about what she does..."
-    },
-    "anneMichelli": {
-      "title": "PHYSIOTHERAPIST: ANNE MICHELLI FONTES",
-      "description": "Introducing Auntie Anne, our physiotherapist at Clinica Intertherapy! With training in Physiotherapy since 2016..."
-    },
-    "arianeAnanias": {
-      "title": "PHYSIOTHERAPIST: ARIANE ANANIAS",
-      "description": "Introducing Tia Ari, the physical therapist who loves what she does at Intertherapy! She has always had a special passion for children..."
-    },
-    "biancaCarnelos": {
-      "title": "PHYSIOTHERAPIST: BIANCA CARNELOS",
-      "description": "Bianca is an incredible physiotherapist and dancer passionate about movement. Graduated from Fundação Hermínio Ometto..."
-    }
-  },
   "contact": {
     "title": "CONTACT US",
     "fields": {

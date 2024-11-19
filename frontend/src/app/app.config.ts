@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
@@ -6,6 +6,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModuleModule } from './translate-module/translate-module.module';
 
 
 const firebaseConfig = {
@@ -21,6 +23,7 @@ const firebaseConfig = {
 
 export const appConfig: ApplicationConfig = {
 providers:[
+  importProvidersFrom(TranslateModuleModule),
   provideRouter(routes),
   [
     provideFirebaseApp(() => initializeApp(firebaseConfig)),

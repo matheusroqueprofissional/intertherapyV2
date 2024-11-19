@@ -5,6 +5,8 @@ import {
   CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
+  GuardResult,
+  MaybeAsync,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -14,24 +16,8 @@ import { map, take } from 'rxjs/operators';
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private auth: Auth) {}
-
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
-  ): Observable<boolean> {
-    // Usando o authState que retorna um Observable
-    return this.auth.authStateReady.pipe(
-      take(1), // Apenas o primeiro valor
-      map((user) => {
-        if (user) {
-          return true; // Usuário autenticado
-        } else {
-          this.router.navigate(['/login'], {
-            queryParams: { returnUrl: state.url }, // Salva a URL original
-          });
-          return false; // Usuário não autenticado
-        }
-      })
-    );
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
+    throw new Error('Method not implemented.');
   }
+
 }

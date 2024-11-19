@@ -6,7 +6,7 @@ import { ServicesComponent } from './pages/services/services.component';
 import { TeamComponent } from './pages/team/team.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { authGuard } from './auth.guard';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: 'inicio', redirectTo: '' },
@@ -16,5 +16,5 @@ export const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login',component:LoginComponent},
-  { path: 'admin',component:AdminPageComponent,canActivate:[authGuard]}
+  { path: 'admin',component:AdminPageComponent,canActivate:[AuthGuard]}
 ];
