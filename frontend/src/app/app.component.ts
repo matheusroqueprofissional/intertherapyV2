@@ -7,10 +7,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent,FooterComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent,FooterComponent,TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -11,20 +11,17 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     TranslateModule
   ],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'], // Corrigido o nome da propriedade
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
   constructor(private translateService: TranslateService) {
-
     const userLang = navigator.language || 'en';
     const languageMap: { [key: string]: string } = {
       'en': 'EN-US',
       'pt': 'PT-BR',
     };
-
-    const languageCode = userLang.split('-')[0]; // Pega apenas o código base do idioma
-    const mappedLang = languageMap[languageCode] || 'EN-US'; // Usa EN-US como fallback
-
+    const languageCode = userLang.split('-')[0];
+    const mappedLang = languageMap[languageCode] || 'EN-US';
     this.translateService.setDefaultLang(mappedLang);
     this.translateService.use(mappedLang);
   }

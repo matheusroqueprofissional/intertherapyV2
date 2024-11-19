@@ -13,7 +13,6 @@
       "i18n": {
         "sourceLocale":"PT-BR",
         "locales":{
-          "PT-BR":"src/assets/i18n/PT-BR.json",
           "EN-US":"src/assets/i18n/EN-US.json"
         }
       },
