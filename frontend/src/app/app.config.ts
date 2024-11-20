@@ -7,7 +7,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { TranslateModule } from '@ngx-translate/core';
-import { TranslateModuleModule } from './translate-module/translate-module.module';
+import { TranslateModuleModule } from './shared/translate-module/translate-module.module';
 
 
 const firebaseConfig = {

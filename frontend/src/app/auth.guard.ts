@@ -17,7 +17,7 @@ import { map, take } from 'rxjs/operators';
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private auth: Auth) {}
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    throw new Error('Method not implemented.');
+    return true
   }
 
 }
