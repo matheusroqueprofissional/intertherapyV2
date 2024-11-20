@@ -1,19 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { CanActivate } from '@angular/router';
-import { AuthGuard } from '../../auth.guard';
 import { TranslateModule } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-page',
   standalone: true,
-  imports: [TranslateModule,CommonModule],
+  imports: [TranslateModule,CommonModule,FormsModule],
   templateUrl: './admin-page.component.html',
   styleUrl: './admin-page.component.scss'
 })
 export class AdminPageComponent implements OnInit {
+
+  titulo: string = 'titulo';
+  editando: boolean = false; // Controla o modo de edição
+  subtitulo: string = 'subtitulo';
+  constructor() {
+
+  }
+
+
+  toggleEdicao() {
+    this.editando = !this.editando; // Alterna entre visualização e edição
+  }
+
+
+
   previewUrl: string | null = null;
 
   ngOnInit(): void {

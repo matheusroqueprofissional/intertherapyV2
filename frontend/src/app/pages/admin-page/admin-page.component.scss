@@ -1,4 +1,5 @@
-@import url('../../global.scss');
+@import '../../global.scss';
+@import '../../variables.scss';
 .history{
   width: 100%;
   display: flex;
@@ -56,3 +57,35 @@ input{
 }
 
 }
+
+.pleceholderTitle{
+  font-size: 48px;
+  height: 48px;
+  color: rgb(255, 0, 0);
+font-family: 'Roboto',sans-serif;
+}
+
+.content_form{
+  display: flex;
+  width: 100%;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
+
+.titulo-input {
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: $orange;
+}
+

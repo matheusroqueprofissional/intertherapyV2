@@ -8,6 +8,7 @@ import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingServ
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateModuleModule } from './shared/translate-module/translate-module.module';
+import { AdminModuleModule } from './shared/admin-module/admin-module.module';
 
 
 const firebaseConfig = {
@@ -23,7 +24,7 @@ const firebaseConfig = {
 
 export const appConfig: ApplicationConfig = {
 providers:[
-  importProvidersFrom(TranslateModuleModule),
+  importProvidersFrom(TranslateModuleModule,AdminModuleModule),
   provideRouter(routes),
   [
     provideFirebaseApp(() => initializeApp(firebaseConfig)),

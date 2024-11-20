@@ -104,8 +104,11 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",  "src/styles/global.scss",  "src/styles/variables.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/global.scss","src/app/variables.scss"]
+            },
             "scripts": []
           }
         }
