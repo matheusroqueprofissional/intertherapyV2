@@ -34,9 +34,6 @@ form{
 }
 
 .preview-container {
-  label{
-    cursor: pointer;
-  }
   margin-top: 15px;
   border: 1px solid #ccc;
   width: 100%;
@@ -74,23 +71,21 @@ font-family: 'Roboto',sans-serif;
   align-items: left;
   flex-direction: column;
   justify-content: center;
-  h2 {
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0;
-  }
-  .titulo-input {
-    font-size: 2rem;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    background: transparent;
-    width: 100%;
-    color: $orange;
-  }
-
 }
 
+h2 {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
 
-
+.titulo-input {
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: $orange;
+}
 

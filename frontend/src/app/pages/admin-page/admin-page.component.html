@@ -14,45 +14,43 @@
       <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" />
     </div>
     <div *ngIf="previewUrl" class="preview-container">
-      <label for="fileInput">
-        <h3>Pré-visualização:</h3>
-
-        <img [src]="previewUrl" alt="Pré-visualização da imagem" class="preview-image" /></label>
-        <div class="content_form">
-          <label>
-            <h2
-            *ngIf="!editando"
-            (click)="toggleEdicao()"
-            >
-            {{ titulo }}
-          </h2>
-          <input
-          *ngIf="editando"
-          [(ngModel)]="titulo"
-          class="titulo-input"
-          (blur)="toggleEdicao()"
-          (keydown.enter)="toggleEdicao()"
-          type="text"
-          autocomplete="off"
-          />
-        </label>
+      <h3>Pré-visualização:</h3>
+      <label for="fileInput"><img [src]="previewUrl" alt="Pré-visualização da imagem" class="preview-image" /></label>
+      <div class="content_form">
         <label>
-          <h3 *ngIf="!editando" (click)="toggleEdicao()">
-            {{subtitulo}}
-          </h3>
-          <input
-          *ngIf="editando"
-          [(ngModel)]="subtitulo"
-          class="titulo-input"
-          (blur)="toggleEdicao()"
-          (keydown.enter)="toggleEdicao()"
-          type="text"
-          autocomplete="off"
-          />
-        </label>
-      </div>
+          <h2
+          *ngIf="!editando"
+          (click)="toggleEdicao()"
+          >
+          {{ titulo }}
+        </h2>
+        <input
+        *ngIf="editando"
+        [(ngModel)]="titulo"
+        class="titulo-input"
+        (blur)="toggleEdicao()"
+        (keydown.enter)="toggleEdicao()"
+        type="text"
+        autocomplete="off"
+        />
+      </label>
+      <label>
+        <h3 *ngIf="!editando" (click)="toggleEdicao()">
+          {{subtitulo}}
+        </h3>
+        <input
+        *ngIf="editando"
+        [(ngModel)]="subtitulo"
+        class="titulo-input"
+        (blur)="toggleEdicao()"
+        (keydown.enter)="toggleEdicao()"
+        type="text"
+        autocomplete="off"
+        />
+      </label>
     </div>
-    <button *ngIf="fileToUpload" (click)="uploadFile()">Enviar</button>
-    <p *ngIf="uploadProgress">{{ uploadProgress }}</p>
   </div>
+  <button *ngIf="fileToUpload" (click)="uploadFile()">Enviar</button>
+  <p *ngIf="uploadProgress">{{ uploadProgress }}</p>
+</div>
 </div>
