@@ -1,21 +1,59 @@
 <div class="content">
   <div class="history">
     <h2>histórico de posts e noticías</h2>
+    <div class="images">
+      <img src="../../../assets/images/admin/noImage.png" alt="">
+      <img src="../../../assets/images/admin/noImage.png" alt="">
+      <img src="../../../assets/images/admin/noImage.png" alt="">
+    </div>
   </div>
   <div class="form">
     <h2>Formulario</h2>
-    <form>
-      <label>
-        <p>titulo*</p>
-        <input type="text">
+    <div>
+      <label for="fileInput">Selecione uma imagem:</label>
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+    <div *ngIf="previewUrl" class="preview-container">
+      <h3>Pré-visualização:</h3>
+      <div>
+        <p>tamanho minimo da imagem = 1920px x 300px</p>
+      </div>
+      <label for="fileInput">
+        <img [src]="previewUrl" alt="Pré-visualização da imagem" class="preview-image" />
+
+
+        <div class="content_form">
+          <label>
+            <h2 *ngIf="!editando" (click)="toggleEdicao()">{{ titulo }} </h2>
+            <input
+            *ngIf="editando"
+            [(ngModel)]="titulo"
+            class="titulo-input"
+            (blur)="toggleEdicao()"
+            (keydown.enter)="toggleEdicao()"
+            type="text"
+            autocomplete="off"
+            />
+          </label>
+          <label>
+            <h3 *ngIf="!editando" (click)="toggleEdicao()">
+              {{subtitulo}}
+            </h3>
+            <input
+            *ngIf="editando"
+            [(ngModel)]="subtitulo"
+            class="titulo-input"
+            (blur)="toggleEdicao()"
+            (keydown.enter)="toggleEdicao()"
+            type="text"
+            autocomplete="off"
+            />
+          </label>
+        </div>
       </label>
-      <p>Aqui ira aparecer o titulo do seu post</p>
-      <label>
-        <p>subtitulo*</p>
-        <input type="text">
-      </label>
-      <p>aqui ira aparecer o subtitulo do seu post</p>
-      <button>Enviar</button>
-    </form>
+    </div>
+    <button *ngIf="fileToUpload" (click)="uploadFile()">Enviar</button>
+    <p *ngIf="uploadProgress">{{ uploadProgress }}</p>
   </div>
 </div>
+
