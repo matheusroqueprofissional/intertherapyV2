@@ -36,7 +36,6 @@ form{
 .preview-container {
   margin-top: 15px;
   border: 1px solid #ccc;
-  width: 100%;
   padding: 10px;
   border-radius: 5px;
   display: inline-block;
@@ -54,6 +53,9 @@ input{
   border-radius: 5px;
   cursor: pointer;
 
+  img{
+    position: absolute;
+  }
 }
 
 }
@@ -85,7 +87,7 @@ h2 {
   border: none;
   outline: none;
   background: transparent;
-  width: 100%;
+  width: auto;
   color: $orange;
 }
 

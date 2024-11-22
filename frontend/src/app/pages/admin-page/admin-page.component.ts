@@ -1,52 +1,51 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-admin-page',
   standalone: true,
-  imports: [TranslateModule,CommonModule,FormsModule],
+  imports: [TranslateModule, CommonModule, FormsModule,MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './admin-page.component.html',
-  styleUrl: './admin-page.component.scss'
+  styleUrl: './admin-page.component.scss',
 })
 export class AdminPageComponent implements OnInit {
 
+  previewUrl: string | null = null;
   titulo: string = 'titulo';
-  editando: boolean = false; // Controla o modo de edição
+  editando: boolean = false;
+  cansend:boolean = false;
   subtitulo: string = 'subtitulo';
-  constructor() {
-
-  }
-
 
   toggleEdicao() {
-    this.editando = !this.editando; // Alterna entre visualização e edição
+    this.editando = !this.editando;
   }
 
-
-
-  previewUrl: string | null = null;
 
   ngOnInit(): void {
-    this.previewUrl = "../../../assets/images/admin/noImage.png"
+    this.previewUrl = '../../../assets/images/admin/noImage.png';
   }
-
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
       this.fileToUpload = file;
-
       if (file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = () => {
+          const img = new Image();
+          img.src = reader.result as string;
+          this.cansend = true
           this.previewUrl = reader.result as string;
         };
         reader.readAsDataURL(file);
       } else {
-        alert('Por favor, selecione um arquivo de imagem.');
+        this.cansend = false
       }
     }
   }
@@ -55,7 +54,7 @@ export class AdminPageComponent implements OnInit {
   uploadProgress: string | null = null;
 
   async uploadFile(): Promise<void> {
-    if (this.fileToUpload) {
+    if (this.fileToUpload && this.cansend == true) {
       const storage = getStorage();
       const storageRef = ref(storage, `images/${this.fileToUpload.name}`);
 
@@ -68,7 +67,6 @@ export class AdminPageComponent implements OnInit {
         // Obtém a URL de download do arquivo
         const downloadURL = await getDownloadURL(storageRef);
         this.uploadProgress = `Upload concluído! URL: ${downloadURL}`;
-        console.log('URL da imagem:', downloadURL);
       } catch (error) {
         console.error('Erro ao fazer upload:', error);
         this.uploadProgress = 'Erro ao enviar o arquivo.';
