@@ -1,0 +1,18 @@
+@import '../../global.scss';
+
+.page{
+  padding: 0 311px 0 301px;
+  .area{
+    display: flex;
+    .inherit{
+
+    }
+    p{
+      font-family: 'Epilogue',sans-serif;
+      font-size: 18px;
+      font-weight:400;
+      color: #313131;
+    }
+  }
+}
+

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-psychology',
   standalone: true,
-  imports: [],
+  imports: [MatGridListModule],
   templateUrl: './psychology.component.html',
-  styleUrl: './psychology.component.scss'
+  styleUrls: ['../subpagesGlobal.scss','./psychology.component.scss']
 })
 export class PsychologyComponent {
 

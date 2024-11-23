@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-psychomotricity',
   standalone: true,
-  imports: [],
+  imports: [MatGridListModule],
   templateUrl: './psychomotricity.component.html',
-  styleUrl: './psychomotricity.component.scss'
+  styleUrls: ['../subpagesGlobal.scss','./psychomotricity.component.scss']
 })
 export class PsychomotricityComponent {
 

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-occupational-therapy',
   standalone: true,
-  imports: [],
+  imports: [MatGridListModule],
   templateUrl: './occupational-therapy.component.html',
-  styleUrl: './occupational-therapy.component.scss'
+  styleUrls: ['./occupational-therapy.component.scss','../subpagesGlobal.scss']
 })
 export class OccupationalTherapyComponent {
 

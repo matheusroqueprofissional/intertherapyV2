@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-speech-therapy',
   standalone: true,
-  imports: [],
+  imports: [MatGridListModule],
   templateUrl: './speech-therapy.component.html',
-  styleUrl: './speech-therapy.component.scss'
+  styleUrls: ['../subpagesGlobal.scss','./speech-therapy.component.scss']
 })
 export class SpeechTherapyComponent {
 
