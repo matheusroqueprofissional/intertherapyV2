@@ -38,9 +38,11 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        // Verifica se a rota atual está na lista de rotas permitidas
-        this.a = this.allowedRoutes.includes(this.router.url);
+        // Verifica se a rota atual contém alguma das palavras na lista de rotas permitidas
+        this.a = this.allowedRoutes.some(route => this.router.url.includes(route));
       }
+
+
     });
   }
 
