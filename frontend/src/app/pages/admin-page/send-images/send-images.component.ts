@@ -18,12 +18,10 @@ import { StorageService } from '../../../shared/services/storage/storage.service
 export class SendImagesComponent implements OnInit{
 
 
-  images: { name: string; url: string }[] = [];
+
+    images: { name: string; url: string; timeCreated: string }[] = [];
 
     constructor(private storageService: StorageService) {}
-
-
-
 
   previewUrl: string | null = null;
   titulo: string = 'titulo';
@@ -38,7 +36,7 @@ export class SendImagesComponent implements OnInit{
 
   async ngOnInit() {
     this.images = await this.storageService.listFiles();
-    console.log(this.images)
+    console.log('Imagens carregadas (ordenadas):', this.images);
     this.previewUrl = '../../../assets/images/admin/noImage.png';
   }
   onFileSelected(event: Event): void {
