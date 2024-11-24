@@ -15,9 +15,9 @@ public class Employer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private String names;
+    private String name;
+    private String surname;
     private String area;
-    private String resume;
-    private String description;
+    private String position;
 
 }

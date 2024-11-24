@@ -1,0 +1,90 @@
+@import "../../../global.scss";
+@import "../../../variables.scss";
+.history {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    img {
+      width: 200px;
+      cursor: pointer;
+    }
+  }
+}
+.form {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-container {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  input {
+    cursor: pointer;
+  }
+  .preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    cursor: pointer;
+
+    img {
+      position: absolute;
+    }
+  }
+}
+
+.pleceholderTitle {
+  font-size: 48px;
+  height: 48px;
+  color: rgb(255, 0, 0);
+  font-family: "Roboto", sans-serif;
+}
+
+.content_form {
+  display: flex;
+  width: 100%;
+  align-items: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h2 {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+}
+
+.titulo-input {
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: auto;
+  color: $orange;
+}

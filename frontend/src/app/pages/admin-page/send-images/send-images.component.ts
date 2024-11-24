@@ -1,38 +1,28 @@
-import { Component, OnInit,inject } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-admin-page',
+  selector: 'app-send-images',
   standalone: true,
-  imports: [TranslateModule, CommonModule, FormsModule,MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule,RouterOutlet],
-  templateUrl: './admin-page.component.html',
-  styleUrl: './admin-page.component.scss',
+  imports: [TranslateModule, CommonModule, FormsModule,MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
+  templateUrl: './send-images.component.html',
+  styleUrl: './send-images.component.scss'
 })
-export class AdminPageComponent implements OnInit {
+export class SendImagesComponent {
 
-  constructor(private router:Router){}
 
-  cores: string[] = ['#F58634', '#A8CF45', '#2DABE5'];
-
-  about: string[] = ["Carousel dashboard management","Treatments management","Employers management"]
 
   previewUrl: string | null = null;
   titulo: string = 'titulo';
   editando: boolean = false;
   cansend:boolean = false;
   subtitulo: string = 'subtitulo';
-
-  changeService(about:string){
-    this.router.navigate(["admin/"+about]);
-    console.log(about)
-  }
 
   toggleEdicao() {
     this.editando = !this.editando;

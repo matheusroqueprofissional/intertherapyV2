@@ -14,7 +14,7 @@ public class principalControllers {
     @Autowired
     TreatmentService treatmentService;
     @Autowired
-    private EmployerService employerService;
+    EmployerService employerService;
 
     @GetMapping("/teste")
     public String teste() {

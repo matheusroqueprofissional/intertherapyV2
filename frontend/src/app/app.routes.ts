@@ -13,6 +13,9 @@ import { PsychologyComponent } from './pages/services/psychology/psychology.comp
 import { PsychomotricityComponent } from './pages/services/psychomotricity/psychomotricity.component';
 import { PsychopedagogyComponent } from './pages/services/psychopedagogy/psychopedagogy.component';
 import { SpeechTherapyComponent } from './pages/services/speech-therapy/speech-therapy.component';
+import { UpdateEmployersComponent } from './pages/admin-page/update-employers/update-employers.component';
+import { UpdateTreatmentsComponent } from './pages/admin-page/update-treatments/update-treatments.component';
+import { SendImagesComponent } from './pages/admin-page/send-images/send-images.component';
 
 export const routes: Routes = [
   { path: 'inicio', redirectTo: '' },
@@ -56,5 +59,35 @@ export const routes: Routes = [
   { path: 'team', component: TeamComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard] },
+  {
+    path: 'admin',
+    component: AdminPageComponent,
+    children: [
+      {
+        path: 'Carousel dashboard management',
+        redirectTo:'images Manager'
+      },
+      {
+        path:"Treatments management",
+        redirectTo:'treatments Manager'
+      },
+      {
+        path:"Employers management",
+        redirectTo:"employers Manager"
+      },
+      {
+        path: 'employers Manager',
+        component: UpdateEmployersComponent,
+      },
+      {
+        path: 'treatments Manager',
+        component: UpdateTreatmentsComponent,
+      },
+      {
+        path: 'images Manager',
+        component: SendImagesComponent,
+      },
+    ],
+    canActivate: [AuthGuard],
+  },
 ];
