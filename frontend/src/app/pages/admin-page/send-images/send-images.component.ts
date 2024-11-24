@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { StorageService } from '../../../shared/services/storage/storage.service';
 
 @Component({
   selector: 'app-send-images',
@@ -14,7 +15,13 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
   templateUrl: './send-images.component.html',
   styleUrl: './send-images.component.scss'
 })
-export class SendImagesComponent {
+export class SendImagesComponent implements OnInit{
+
+
+  images: { name: string; url: string }[] = [];
+
+    constructor(private storageService: StorageService) {}
+
 
 
 
@@ -29,7 +36,9 @@ export class SendImagesComponent {
   }
 
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.images = await this.storageService.listFiles();
+    console.log(this.images)
     this.previewUrl = '../../../assets/images/admin/noImage.png';
   }
   onFileSelected(event: Event): void {

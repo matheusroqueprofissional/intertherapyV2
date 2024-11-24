@@ -87,4 +87,16 @@ export class AdminPageComponent implements OnInit {
       alert('Nenhum arquivo selecionado para upload.');
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
 }

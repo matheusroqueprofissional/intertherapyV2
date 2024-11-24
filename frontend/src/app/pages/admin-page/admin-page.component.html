@@ -3,6 +3,5 @@
     <button *ngFor="let cor of cores, let index = index" mat-button [ngStyle]="{'background-color': cor}" (click)="changeService(about[index])">{{about[index]}}</button>
   </div>
   <router-outlet></router-outlet>
-
 </div>
 

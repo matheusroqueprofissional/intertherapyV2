@@ -1,11 +1,10 @@
 <div class="content">
   <div class="history">
     <h2>histórico de posts e noticías</h2>
-    <div class="images">
-      <img src="../../../assets/images/admin/noImage.png" alt="">
-      <img src="../../../assets/images/admin/noImage.png" alt="">
-      <img src="../../../assets/images/admin/noImage.png" alt="">
-    </div>
+    <div *ngFor="let image of images" class="image-item">
+      <img [src]="image.url" [alt]="image.name" />
+      <p>{{ image.name }}</p>
+  </div>
   </div>
   <div class="form">
     <h2>Formulario</h2>
