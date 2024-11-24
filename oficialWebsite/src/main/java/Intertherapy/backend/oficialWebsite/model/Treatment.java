@@ -10,12 +10,16 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Student {
+public class Treatment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
-    private String email;
-    private String rollna;
+    private String area;
+    private String resume;
+    private String description;
+
+
 }
