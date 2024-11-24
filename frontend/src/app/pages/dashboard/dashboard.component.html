@@ -40,7 +40,7 @@
       </ul>
     </div>
     <div class="imagem-missao">
-      <img src="../../../assets/images/dashboard/dashboardKid.svg" alt="imagem de criança feliz">
+      <img [src]="imageSrc"  alt="imagem de criança feliz">
     </div>
   </div>
 
@@ -97,3 +97,8 @@
     </div>
   </div>
 </div>
+
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

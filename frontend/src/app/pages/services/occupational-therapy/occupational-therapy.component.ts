@@ -6,7 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
   standalone: true,
   imports: [MatGridListModule],
   templateUrl: './occupational-therapy.component.html',
-  styleUrls: ['./occupational-therapy.component.scss','../subpagesGlobal.scss']
+  styleUrls: ['../subpagesGlobal.scss','./occupational-therapy.component.scss']
 })
 export class OccupationalTherapyComponent {
 
