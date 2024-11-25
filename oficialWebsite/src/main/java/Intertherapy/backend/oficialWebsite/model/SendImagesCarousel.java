@@ -10,7 +10,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class sendImagesCarousel {
+public class SendImagesCarousel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
