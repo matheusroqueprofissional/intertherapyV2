@@ -1,26 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./shared/header/header.component";
-import { AngularVlibras } from 'angular-vlibras';
 import { FooterComponent } from './shared/footer/footer.component';
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { TranslateModule } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent,FooterComponent,TranslateModule],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-
-
-
-
-
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   a: boolean = false; // Variável para controlar a exibição do header e footer
 
@@ -31,9 +24,27 @@ export class AppComponent implements OnInit{
     '/services',
     '/team',
     '/contact',
-    '/admin'];
+    '/admin'
+  ];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private translateService: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: any // Identifica o ambiente (navegador ou servidor)
+  ) {
+    // Verifica se está no ambiente do navegador
+    if (isPlatformBrowser(this.platformId)) {
+      const userLang = navigator.language || 'en';
+      const languageMap: { [key: string]: string } = {
+        'en': 'EN-US',
+        'pt': 'PT-BR',
+      };
+      const languageCode = userLang.split('-')[0];
+      const mappedLang = languageMap[languageCode] || 'EN-US';
+      this.translateService.setDefaultLang(mappedLang);
+      this.translateService.use(mappedLang);
+    }
+  }
 
   ngOnInit() {
     this.router.events.subscribe(event => {
@@ -41,9 +52,6 @@ export class AppComponent implements OnInit{
         // Verifica se a rota atual contém alguma das palavras na lista de rotas permitidas
         this.a = this.allowedRoutes.some(route => this.router.url.includes(route));
       }
-
-
     });
   }
-
 }

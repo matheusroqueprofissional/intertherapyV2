@@ -1,0 +1,32 @@
+.square{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  max-width: 425px;
+  max-height: 409px;
+
+  .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 28px 0 28px;
+    h2{
+      color: #2DABE5;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 37.2px;
+      font-family: 'Epilogue',sans-serif;
+      text-transform: capitalize;
+    }
+    p{
+      font-family: 'Epilogue',sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
