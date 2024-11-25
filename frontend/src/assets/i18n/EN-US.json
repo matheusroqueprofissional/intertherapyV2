@@ -1,12 +1,12 @@
 {
-    "title": "Bem-vindo ao Dashboard",
+  "title": "Welcome to the Dashboard",
   "mainPage": {
     "ourMission": {
       "title": "OUR MISSION",
-      "text": "Meeting the needs of our patients, exceeding expectations and fulfilling desires are our greatest mission..."
+      "text": "Meeting the needs of our patients, exceeding expectations, and fulfilling desires are our greatest mission. We want to offer much more than methods and techniques in the field of child and adult neurorehabilitation, through a humanized, specialized, and interdisciplinary approach, promoting the full development of the potential of people with disabilities, allowing each of them and their families to enjoy the pleasure of living even more intensely."
     },
     "targetAudience": {
-      "title": "Target audience",
+      "title": "Target Audience",
       "text": [
         "Pediatric and adult patients with some type of neurological condition",
         "Developmental delays",
@@ -19,27 +19,45 @@
     "ourSpecialties": {
       "title": "OUR SPECIALTIES",
       "specialties": [
-        {"title": "PHYSIOTHERAPY", "description": "Improve the physical function and quality of life of individuals..."},
-        {"title": "OCCUPATIONAL THERAPY", "description": "Promote functional independence and quality of life..."},
-        {"title": "SPEECH THERAPY", "description": "Assess, diagnose, and treat communication, language, swallowing..."},
-        {"title": "PSYCHOLOGY", "description": "Understand and treat emotional, cognitive, and behavioral aspects..."},
-        {"title": "PSYCHOPEDAGOGY", "description": "Understand and intervene in learning processes..."},
-        {"title": "PSYCHOMOTRICITY", "description": "Use movement and body expression to promote the person’s global development..."}
+        {
+          "title": "PHYSIOTHERAPY",
+          "description": "Improve the physical function and quality of life of individuals through specific techniques and exercises."
+        },
+        {
+          "title": "OCCUPATIONAL THERAPY",
+          "description": "Promote functional independence and quality of life by improving motor, cognitive, and emotional skills through targeted interventions."
+        },
+        {
+          "title": "SPEECH THERAPY",
+          "description": "Assess, diagnose, and treat communication, language, swallowing, and voice disorders, aiming to improve the function and quality of life of patients."
+        },
+        {
+          "title": "PSYCHOLOGY",
+          "description": "Understand and treat emotional, cognitive, and behavioral aspects to enhance the well-being and quality of life of individuals and their families."
+        },
+        {
+          "title": "PSYCHOPEDAGOGY",
+          "description": "Understand and intervene in learning processes, offering strategies for the development of educational and cognitive skills."
+        },
+        {
+          "title": "PSYCHOMOTRICITY",
+          "description": "Use movement and body expression to promote the person's global development, integrating cognitive, emotional, and motor aspects."
+        }
       ]
     }
   },
   "aboutUs": {
     "history": {
       "title": "ABOUT US - HISTORY",
-      "text": "The Intertherapy Clinic was founded by physiotherapist Tatiane Tedeschi Roque on January 14, 2019..."
+      "text": "The Intertherapy Clinic was founded by physiotherapist Tatiane Tedeschi Roque on January 14, 2019, offering interdisciplinary services. Tatiane, the founder and director of the clinic, has worked in the neurofunctional rehabilitation field since 2009. Over her career, she has specialized in methods aimed at neurological treatment, such as the Therasuit Method, with international experience, direct current stimulation (TDCS), the Pediatric Neurodevelopmental Bobath Concept, among others."
     },
     "whyIntertherapy": {
       "title": "Why Intertherapy?",
-      "text": "INTERTHERAPY: a feminine noun that conveys the idea of relationships, exchanges..."
+      "text": "INTERTHERAPY: a feminine noun that conveys the idea of relationships, exchanges, coordination, partnerships, and contributions among areas and people. Inter = Interdisciplinarity; Therapy = refers to the idea of therapy; Thera = represents our team's history through action with intensive protocols."
     },
     "vision": {
       "title": "VISION",
-      "text": "To be a reference in the area of Neurohabilitation by offering differentiated interdisciplinary therapeutic support..."
+      "text": "To be a reference in the field of Neurohabilitation, offering differentiated interdisciplinary therapeutic support with specificity and excellence, fully meeting the needs of our patients and their families, ensuring that each story is unique and rich in details within our therapeutic follow-up."
     },
     "values": {
       "title": "VALUES",
@@ -61,7 +79,7 @@
   "services": {
     "physiotherapy": {
       "title": "PHYSIOTHERAPY",
-      "description": "Physiotherapy Assessment in Neurology: This assessment encompasses the analysis of the main developmental milestones in sensorimotor aspects..."
+      "description": "Physiotherapy Assessment in Neurology: This assessment encompasses the analysis of the main developmental milestones in sensorimotor aspects, emphasizing key clinical structures such as muscle strength, tone, musculoskeletal condition, primitive reflexes, protective reactions, and balance, among others. Complementary tools like baropodometry and gait analysis may be used when necessary."
     },
     "treatments": {
       "title": "TREATMENTS",
