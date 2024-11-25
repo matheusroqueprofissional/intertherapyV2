@@ -1,5 +1,4 @@
-@import "../../../global.scss";
-@import "../../../variables.scss";
+
 .history {
   width: 100%;
   display: flex;
@@ -86,5 +85,27 @@ h2 {
   outline: none;
   background: transparent;
   width: auto;
-  color: $orange;
+}
+
+.historyImageContent{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.image-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img{
+    width: 60px;
+  }
+
+
+
+
 }

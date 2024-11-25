@@ -1,0 +1,29 @@
+<div class="history">
+  <h2>Histórico de posts e notícias</h2>
+  @if (isLoading == true) {
+    <mat-spinner></mat-spinner>
+  }
+  <div class="carousel-container">
+    <div class="carousel-wrapper">
+      <button class="prev" (click)="prevSlide()">&#10094;</button>
+      <div class="carousel" [style.transform]="getTransform()">
+        <div class="carousel-item" *ngFor="let image of images">
+          <img [src]="image.url" [alt]="image.name" />
+          <p>{{ image.name }}</p>
+        </div>
+      </div>
+      <button class="next" (click)="nextSlide()">&#10095;</button>
+    </div>
+    <!-- Pré-visualização das imagens anterior e próxima -->
+    <div class="preview-wrapper">
+      <div class="preview-item">
+        <img [src]="getPrevImage().url" [alt]="'Imagem anterior: ' + getPrevImage().name" (click)="prevSlide()"/>
+        <p>{{ getPrevImage().name }}</p>
+      </div>
+      <div class="preview-item">
+        <img [src]="getNextImage().url" [alt]="'Próxima imagem: ' + getNextImage().name" (click)="nextSlide()"/>
+        <p>{{ getNextImage().name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

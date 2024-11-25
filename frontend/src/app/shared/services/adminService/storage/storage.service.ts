@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { getStorage, ref, listAll, getMetadata, getDownloadURL } from '@angular/fire/storage';
+import { contentImageCarousel } from '../../../../interfaces/contentImageCarousel.interface';
 
 interface FileData {
     name: string;
@@ -12,6 +14,8 @@ interface FileData {
 })
 export class StorageService {
     private storage = getStorage();
+
+    constructor(private http:HttpClient){}
 
     async listFiles(): Promise<FileData[]> {
         try {
@@ -35,4 +39,17 @@ export class StorageService {
             return [];
         }
     }
+
+    postTitleSubtitle(contentImageCarousel: contentImageCarousel) {
+      const payload = {
+        title: "contentImageCarousel.title",
+        subtitle: "contentImageCarousel.subtitle,"
+      };
+      return this.http.post(
+        "http://127.0.0.1:8080/system/saveCarouselContent",
+        payload
+      );
+    }
+
+
 }

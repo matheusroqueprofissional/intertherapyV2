@@ -1,16 +1,14 @@
+
 <div class="content">
   <div class="history">
     <h2>histórico de posts e noticías</h2>
-    <div *ngFor="let image of images" class="image-item">
-      <img [src]="image.url" [alt]="image.name" />
-      <p>{{ image.name }}</p>
+    <app-carousel></app-carousel>
   </div>
-  </div>
-  <div class="form">
+  <form class="form" [formGroup]="sendImageForm">
     <h2>Formulario</h2>
     <div>
       <label for="fileInput">Selecione uma imagem:</label>
-      <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" />
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" formControlName="file"/>
     </div>
     <div *ngIf="previewUrl" class="preview-container">
       <h3>Pré-visualização:</h3>
@@ -32,6 +30,7 @@
             (keydown.enter)="toggleEdicao()"
             type="text"
             autocomplete="off"
+            formControlName="title"
             />
           </label>
           <label>
@@ -46,6 +45,7 @@
             (keydown.enter)="toggleEdicao()"
             type="text"
             autocomplete="off"
+            formControlName="subtitle"
             />
           </label>
         </div>
@@ -53,6 +53,10 @@
     </div>
     <button *ngIf="fileToUpload" (click)="uploadFile()">Enviar</button>
     <p *ngIf="uploadProgress">{{ uploadProgress }}</p>
-  </div>
+  </form>
 </div>
 
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

@@ -1,0 +1,118 @@
+.history {
+  text-align: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    flex-direction: column;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+
+  .carousel-item {
+    min-width: 100%; /* Agora ocupa todo o espaço disponível */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Garante que padding e border não "estourem" o layout */
+
+    img {
+      max-width: 100%; /* Ajusta a largura da imagem */
+      height: 300px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .preview-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%; /* Ajusta a largura da área de preview */
+
+    .preview-item {
+      cursor: pointer;
+      text-align: center;
+      width: 48%; /* Cada preview ocupa 48% para alinhamento perfeito */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        max-width: 100%; /* Garante que as imagens respeitem o container */
+        max-height: 100px; /* Define um limite de altura */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: #777;
+      }
+    }
+  }
+}
