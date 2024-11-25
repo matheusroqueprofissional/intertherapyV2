@@ -1,3 +1,4 @@
+@import '../../../global.scss';
 .square{
   display: flex;
   align-items: center;
@@ -27,6 +28,16 @@
       font-weight: 400;
       text-align: center;
     }
+  }
+  .buttonDelete{
+    background-color: $red;
+  }
+  .buttonEdit{
+    background-color: $orange;
+  }
+  .buttons{
+    display: flex;
+    gap: 30px;
   }
 }
 

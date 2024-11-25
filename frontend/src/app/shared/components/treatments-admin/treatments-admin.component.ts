@@ -5,8 +5,12 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './treatments-admin.component.html',
-  styleUrl: './treatments-admin.component.scss'
+  styleUrls: ['../../../global.scss','./treatments-admin.component.scss']
 })
 export class TreatmentsAdminComponent {
+
+  deletar(){
+    console.log("deletando");
+  }
 
 }
