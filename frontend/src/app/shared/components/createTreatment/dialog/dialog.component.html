@@ -1,0 +1,32 @@
+<div class="content">
+  <form class="form" [formGroup]="sendImageForm">
+    <h2>Formulario</h2>
+    <div>
+      <label for="fileInput">Selecione uma imagem:</label>
+      <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*" formControlName="file"/>
+    </div>
+    <div *ngIf="previewUrl" class="preview-container">
+      <h3>Pré-visualização:</h3>
+      <div>
+        <p>tamanho minimo da imagem = 1920px x 300px</p>
+      </div>
+      <label for="fileInput">
+        <img [src]="previewUrl" alt="Pré-visualização da imagem" class="preview-image" />
+      </label>
+    </div>
+    <p *ngIf="uploadProgress">{{ uploadProgress }}</p>
+    <label>
+      <p> Nome do tratamento</p>
+      <input type="text" placeholder="Insira aqui o nome do tratamento">
+    </label>
+    <label>
+      <p>Descrição</p>
+      <textarea class="description" name="description" formGroupName="description" placeholder="descrição do tratamento"></textarea>
+    </label>
+    <label>
+      <p>Resumo sobre atendimento</p>
+      <input type="text" placeholder="resumo do atendimento">
+    </label>
+    <button *ngIf="fileToUpload" (click)="uploadFile()">Enviar</button>
+  </form>
+</div>
