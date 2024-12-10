@@ -7,14 +7,15 @@ import { urlDefault, endpoints } from '../../../../../environments/urls';
   providedIn: 'root'
 })
 export class TreatmentUpdateService {
-  url = urlDefault
+  private baseUrl = 'http://127.0.0.1:8080/system'; // URL do backend
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  postTreatments(treatmentsInterface:TreatmentsInterface){
-    this.http.post(urlDefault+endpoints.saveTreatments,treatmentsInterface);
+  postTreatments(data: TreatmentsInterface) {
+    return this.http.post(`${this.baseUrl}/saveTreatments`, data);
   }
 
-  updateTreatments(){
+  updateTreatments() {
+    // Implementar lógica para update
   }
 }

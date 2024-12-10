@@ -1,12 +1,29 @@
-import { Component, inject, model } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, model, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule, MatGridList } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { TreatmentsAdminComponent } from '../../treatments-admin/treatments-admin.component';
-import { MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { DialogData, UpdateTreatmentsComponent } from '../../../../pages/admin-page/update-treatments/update-treatments.component';
+import {
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import {
+  DialogData,
+  UpdateTreatmentsComponent,
+} from '../../../../pages/admin-page/update-treatments/update-treatments.component';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { StorageService } from '../../../services/adminService/storage/storage.service';
 import { CommonModule } from '@angular/common';
@@ -15,11 +32,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CarouselComponent } from '../../../carousel/carousel.component';
 import { TreatmentUpdateService } from '../../../services/adminService/treatmentUpdate/treatment-update.service';
 import { TreatmentsInterface } from '../../../../interfaces/treatments-interface';
+import { AreasInterface } from '../../../../interfaces/areas-interface';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [    MatFormFieldModule,
+  imports: [
+    DropdownModule,
+    MatFormFieldModule,
     MatInputModule,
     FormsModule,
     MatButtonModule,
@@ -35,9 +55,9 @@ import { TreatmentsInterface } from '../../../../interfaces/treatments-interface
     MatProgressSpinnerModule,
   ],
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+  styleUrl: './dialog.component.scss',
 })
-export class DialogComponent {
+export class DialogComponent implements OnInit {
   readonly dialogRef = inject(MatDialogRef<UpdateTreatmentsComponent>);
   readonly data = inject<DialogData>(MAT_DIALOG_DATA);
   readonly animal = model(this.data.animal);
@@ -45,25 +65,36 @@ export class DialogComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-
-
-
-
-
-
+  areas!:AreasInterface[]|undefined;
   sendImageForm!: FormGroup;
   cansend: boolean = false;
   previewUrl: string | null = null;
 
-  constructor(private fb: FormBuilder, private storageService: StorageService,private treatmentsService:TreatmentUpdateService) {
+  constructor(
+    private fb: FormBuilder,
+    private storageService: StorageService,
+    private treatmentsService: TreatmentUpdateService,
+    private treatmentsUpdateService: TreatmentUpdateService
+  ) {
     this.sendImageForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(4)]],
-      subtitle: [
-        '',
-        [Validators.required, Validators.minLength(4)],
-      ],
-      file: [this.fileToUpload, [Validators.required, Validators.minLength(4)]],
+      name: ['', Validators.required], // Nome do tratamento
+      area: [''], // Resumo do atendimento
+      description: ['', Validators.required], // Descrição do tratamento
+      resume: ['', Validators.required], // Nome do tratamento
+      file: [null, Validators.required] // Arquivo de imagem
     });
+
+
+  }
+  ngOnInit(): void {
+this.areas = [
+  { name: 'Fisioterapia' },
+  { name: 'Fonoaudilogia' },
+  { name: 'Terapia ocupacional' },
+  { name: 'Pscicomotricidade' },
+  { name: 'psicopedagogo' }
+];
+    throw new Error('Method not implemented.');
   }
 
   onFileSelected(event: Event): void {
@@ -86,15 +117,29 @@ export class DialogComponent {
     }
   }
 
+  onAreaChange(event: any): void {
+    const selectedArea = event.value.name; // Pega apenas o nome da área
+    this.sendImageForm.patchValue({ area: selectedArea });
+    console.log('Área selecionada:', selectedArea);
+  }
+
   fileToUpload: File | null = null;
   uploadProgress: string | null = null;
-
+  TreatmentsInterface!: TreatmentsInterface
   async uploadFile(): Promise<void> {
-
-
     if (this.fileToUpload && this.cansend == true) {
       const storage = getStorage();
-      const storageRef = ref(storage, `imagesTreatment/${this.fileToUpload.name}`);
+      const storageRef = ref(
+        storage,
+        `imagesTreatment/${this.fileToUpload.name}`
+      );
+
+      const formData = {
+        ...this.sendImageForm.value,
+        area: this.sendImageForm.value.area.name, // Enviar apenas o nome da área
+      };
+
+      console.log('Enviando:', formData);
 
       this.uploadProgress = 'Enviando...';
 
@@ -111,9 +156,10 @@ export class DialogComponent {
       alert('Nenhum arquivo selecionado para upload.');
     }
     try {
+      console.log(this.sendImageForm);
       this.storageService
         .postTitleSubtitle({
-          title: 'this.sendImageForm.value.title',
+          title: 'this.sendImageForm.value.treatmentName',
           subtitle: 'this.sendImageForm.value.subtitle',
         })
         .subscribe({
@@ -121,21 +167,18 @@ export class DialogComponent {
           error: (err) => console.error('Erro:', err),
         });
 
-      console.log('titulo enviado');
-      console.log(
-        this.sendImageForm.value.title,
-        this.sendImageForm.value.subtitle
-      );
+
     } catch {
       console.log('titulo não enviado');
     }
-    this.treatmentsService.postTreatments({
-      name:'',
-      description:'',
-      area:'',
-      resume:''
-    })
 
-
+    this.treatmentsService.postTreatments(this.sendImageForm.value).subscribe(
+      response => {
+        console.log('Sucesso:', response);
+      },
+      error => {
+        console.error('Erro ao enviar:', error);
+      }
+    );
   }
 }
