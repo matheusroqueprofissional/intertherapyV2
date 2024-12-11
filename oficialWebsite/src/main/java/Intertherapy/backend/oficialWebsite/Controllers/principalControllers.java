@@ -8,6 +8,7 @@ import Intertherapy.backend.oficialWebsite.service.SendImagesCarouselService;
 import Intertherapy.backend.oficialWebsite.service.TreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/system")
@@ -28,6 +29,12 @@ public class principalControllers {
 
     @PostMapping("/saveTreatments")
     public Treatment saveTreatment(@RequestBody Treatment treatment) {return treatmentService.create(treatment);}
+
+    @GetMapping("/getTreatments")
+    public List<Treatment> getAllTreatments() {
+        return treatmentService.findAll();
+    }
+
 
     @PostMapping("/saveEmployer")
     public Employer saveEmployer(@RequestBody Employer employer) {return employerService.create(employer);}

@@ -20,6 +20,7 @@ public class Treatment {
     private String area;
     private String resume;
     private String description;
+    private String imageUrl;
 
 
 }

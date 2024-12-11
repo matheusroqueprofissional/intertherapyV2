@@ -65,7 +65,8 @@ export class DialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
-  areas!:AreasInterface[]|undefined;
+  downloadURL!: String;
+  areas!: AreasInterface[] | undefined;
   sendImageForm!: FormGroup;
   cansend: boolean = false;
   previewUrl: string | null = null;
@@ -81,19 +82,18 @@ export class DialogComponent implements OnInit {
       area: [''], // Resumo do atendimento
       description: ['', Validators.required], // Descrição do tratamento
       resume: ['', Validators.required], // Nome do tratamento
-      file: [null, Validators.required] // Arquivo de imagem
+      file: [null, Validators.required], // Arquivo de imagem
+      imageUrl: [this.downloadURL, Validators.required],
     });
-
-
   }
   ngOnInit(): void {
-this.areas = [
-  { name: 'Fisioterapia' },
-  { name: 'Fonoaudilogia' },
-  { name: 'Terapia ocupacional' },
-  { name: 'Pscicomotricidade' },
-  { name: 'psicopedagogo' }
-];
+    this.areas = [
+      { name: 'Fisioterapia' },
+      { name: 'Fonoaudilogia' },
+      { name: 'Terapia ocupacional' },
+      { name: 'Pscicomotricidade' },
+      { name: 'psicopedagogo' },
+    ];
     throw new Error('Method not implemented.');
   }
 
@@ -125,7 +125,7 @@ this.areas = [
 
   fileToUpload: File | null = null;
   uploadProgress: string | null = null;
-  TreatmentsInterface!: TreatmentsInterface
+  TreatmentsInterface!: TreatmentsInterface;
   async uploadFile(): Promise<void> {
     if (this.fileToUpload && this.cansend == true) {
       const storage = getStorage();
@@ -134,20 +134,29 @@ this.areas = [
         `imagesTreatment/${this.fileToUpload.name}`
       );
 
+      this.uploadProgress = 'Enviando...';
+
+      try {
+          // Realiza o upload
+      await uploadBytes(storageRef, this.fileToUpload);
+
+      // Obtém a URL do arquivo
+      this.downloadURL = await getDownloadURL(storageRef);
+      this.uploadProgress = `Upload concluído! URL: ${this.downloadURL}`;
+
+      // Atualiza o campo imageUrl no formulário
+      this.sendImageForm.patchValue({
+        imageUrl: this.downloadURL,
+      });
+
+      // Cria os dados para envio
       const formData = {
         ...this.sendImageForm.value,
-        area: this.sendImageForm.value.area.name, // Enviar apenas o nome da área
+        area: this.sendImageForm.value.area.name, // Envia apenas o nome da área
       };
 
       console.log('Enviando:', formData);
 
-      this.uploadProgress = 'Enviando...';
-
-      try {
-        await uploadBytes(storageRef, this.fileToUpload);
-
-        const downloadURL = await getDownloadURL(storageRef);
-        this.uploadProgress = `Upload concluído! URL: ${downloadURL}`;
       } catch (error) {
         console.error('Erro ao fazer upload:', error);
         this.uploadProgress = 'Erro ao enviar o arquivo.';
@@ -166,17 +175,16 @@ this.areas = [
           next: (response) => console.log('Resposta:', response),
           error: (err) => console.error('Erro:', err),
         });
-
-
     } catch {
       console.log('titulo não enviado');
     }
 
     this.treatmentsService.postTreatments(this.sendImageForm.value).subscribe(
-      response => {
+      (response) => {
         console.log('Sucesso:', response);
+        console.log(this.downloadURL);
       },
-      error => {
+      (error) => {
         console.error('Erro ao enviar:', error);
       }
     );

@@ -1,32 +1,24 @@
-
-
-
 <div class="content">
   <h2>tratamentos</h2>
 
-  <mat-grid-list cols="3" rowHeight="2:1.4" class="teste">
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-treatments-admin></app-treatments-admin>
+  <!-- Renderiza a grid de tratamentos, se houver -->
+  <mat-grid-list cols="3" rowHeight="2:1.4" class="teste" *ngIf="treatments && treatments.length; else template">
+    <mat-grid-tile *ngFor="let item of treatments; trackBy: trackByIndex">
+      <app-treatments-admin
+        [title]="item.name"
+        [imageUrl]="item.imageUrl"
+        [description]="item.description">
+      </app-treatments-admin>
     </mat-grid-tile>
   </mat-grid-list>
 
-
+  <!-- Botão para criar novo tratamento -->
   <div class="createTreatment">
     <button mat-flat-button (click)="openDialog()">criar tratamento</button>
   </div>
 </div>
+
+<!-- Template para caso não existam tratamentos -->
+<ng-template #template>
+  <p>não há itens</p>
+</ng-template>
