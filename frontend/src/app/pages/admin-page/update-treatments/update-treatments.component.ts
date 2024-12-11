@@ -77,7 +77,6 @@ export class UpdateTreatmentsComponent implements OnInit {
 
     this.getTreatments();
 
-    throw new Error('Method not implemented.');
   }
   trackByIndex(index: number, item: any): number {
     return index;

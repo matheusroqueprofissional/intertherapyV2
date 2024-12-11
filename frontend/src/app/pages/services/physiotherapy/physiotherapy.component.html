@@ -34,16 +34,18 @@
   </div>
   <section class="tratamentos">
     <h2>Tratamentos</h2>
-    <mat-grid-list cols="3" rowHeight="2:1">
-      <mat-grid-tile>Método Therasuit</mat-grid-tile>
-      <mat-grid-tile>ETCC / TDCS</mat-grid-tile>
-      <mat-grid-tile>Treinamento Locomotor</mat-grid-tile>
-      <mat-grid-tile>Conceito Neuroevolutivo Bobath</mat-grid-tile>
-      <mat-grid-tile>Laserterapia</mat-grid-tile>
-      <mat-grid-tile>Realidade Virtual – RV</mat-grid-tile>
-      <mat-grid-tile>Integração Sensorial</mat-grid-tile>
-      <mat-grid-tile>ABA</mat-grid-tile>
-      <mat-grid-tile>PODD</mat-grid-tile>
+    <mat-grid-list cols="3" rowHeight="2:1.4" class="teste" *ngIf="treatments && treatments.length; else template">
+      <mat-grid-tile *ngFor="let item of treatments; trackBy: trackByIndex">
+        <app-treatments-admin
+          [title]="item.name"
+          [imageUrl]="item.imageUrl"
+          [description]="item.description">
+        </app-treatments-admin>
+      </mat-grid-tile>
     </mat-grid-list>
   </section>
 </section>
+
+<ng-template #template>
+  <p>não há itens</p>
+</ng-template>

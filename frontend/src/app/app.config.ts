@@ -1,16 +1,16 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
-import { getStorage, provideStorage } from '@angular/fire/storage';
-import { TranslateModule } from '@ngx-translate/core';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { Component } from '@angular/core';
 import { TranslateModuleModule } from './shared/translate-module/translate-module.module';
 import { AdminModuleModule } from './shared/admin-module/admin-module.module';
 
-
+// Configuração do Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyC1TRAFbbTHNkuRJZavNiOh0YcyARslorg",
   authDomain: "intertherapy-f5e69.firebaseapp.com",
@@ -21,12 +21,24 @@ const firebaseConfig = {
   measurementId: "G-GEDKC2T711"
 };
 
+@Component({
+  selector: 'app-root',
+  template: `<h1>Firebase Standalone App</h1>`,
+  standalone: true,
+  imports: [],
+})
+export class AppComponent {}
 
 export const appConfig: ApplicationConfig = {
-providers:[
-  importProvidersFrom(TranslateModuleModule,AdminModuleModule),
-  provideRouter(routes),
-  [
+  providers: [
+    importProvidersFrom(TranslateModuleModule, AdminModuleModule),
+    provideRouter(routes),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(()=>getFirestore())], provideFirebaseApp(() => initializeApp({"projectId":"intertherapy-f5e69","appId":"1:1080674504020:web:3cb76dc240e704c8354cc1","storageBucket":"intertherapy-f5e69.appspot.com","apiKey":"AIzaSyC1TRAFbbTHNkuRJZavNiOh0YcyARslorg","authDomain":"intertherapy-f5e69.firebaseapp.com","messagingSenderId":"1080674504020","measurementId":"G-GEDKC2T711"})), provideAuth(() => getAuth()), provideAnalytics(() => getAnalytics()), ScreenTrackingService, UserTrackingService, provideFirestore(() => getFirestore()), provideStorage(() => getStorage())]
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
+    provideStorage(() => getStorage()), // Provedor do Firebase Storage
+    ScreenTrackingService, // Rastreamento de tela para analytics
+    UserTrackingService // Rastreamento de usuário para analytics
+  ],
 };
