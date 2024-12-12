@@ -5,10 +5,10 @@
     (click)="redirectTo('')" src="../../../assets/images/Intertherapy Logo.svg" alt="">
   </div>
   <div class="content flex gap-2  justify-content-end">
+    <button></button>
     <div class="link-container" *ngFor="let link of links; let i = index">
       <a (click)="redirectTo(link)" (mouseover)="isHovered[i] = true" (mouseout)="isHovered[i] = false">{{link}}</a>
       <div class="square" *ngIf="isHovered[i]" [ngStyle]="{'background-color': hoverColors[i]}"></div>
     </div>
-
   </div>
 </div>

@@ -39,6 +39,7 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from '@angular/fire/firestore';
 import { appConfig } from '../../../app.config';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
+import { TreatmentsComponent } from "../../../shared/components/treatments/treatments.component";
 
 export interface DialogData {
   animal: string;
@@ -53,7 +54,6 @@ export interface DialogData {
   selector: 'app-physiotherapy',
   standalone: true,
   imports: [
-
     MatGridListModule,
     MatGridList,
     TreatmentsAdminComponent,
@@ -62,8 +62,9 @@ export interface DialogData {
     FormsModule,
     MatButtonModule,
     CommonModule,
-    TranslateModule
-  ],
+    TranslateModule,
+    TreatmentsComponent
+],
   templateUrl: './physiotherapy.component.html',
   styleUrls: ['../subpagesGlobal.scss','./physiotherapy.component.scss']
 })

@@ -36,11 +36,11 @@
     <h2>Tratamentos</h2>
     <mat-grid-list cols="3" rowHeight="2:1.4" class="teste" *ngIf="treatments && treatments.length; else template">
       <mat-grid-tile *ngFor="let item of treatments; trackBy: trackByIndex">
-        <app-treatments-admin
+        <app-treatments
           [title]="item.name"
           [imageUrl]="item.imageUrl"
           [description]="item.description">
-        </app-treatments-admin>
+        </app-treatments>
       </mat-grid-tile>
     </mat-grid-list>
   </section>
