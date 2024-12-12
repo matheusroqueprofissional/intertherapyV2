@@ -7,10 +7,10 @@
       alt=""
     />
   </div>
-  <div class="content flex gap-2 justify-content-end">
+  <div class="content flex gap-2 justify-content-end align-items-center">
     <div class="language-switcher">
       <mat-form-field>
-        <mat-select
+        <mat-select class="flex align-content-center justify-content-center"
           [(value)]="currentLanguage"
           (selectionChange)="changeLanguage($event.value)"
         >

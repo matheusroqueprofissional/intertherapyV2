@@ -57,12 +57,14 @@
   },
   "aboutUs": {
     "history": {
-      "title": "SOBRE NÓS - HISTÓRIA",
-      "text": "A Clínica Intertherapy foi fundada pela fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019, oferecendo serviços interdisciplinares. Tatiane, fundadora e diretora da clínica, trabalha na área de reabilitação neurofuncional desde 2009 e, ao longo de sua carreira, especializou-se em métodos voltados para o tratamento neurológico, como o Método Therasuit, com experiências internacionais, estimulação por Corrente Direta (TDCS), o Conceito Neuroevolutivo Bobath Pediátrico, entre outros."
+      "historyTitle": "HISTÓRIA",
+      "the clinic":"A Clínica",
+      "the founding": "foi fundada pela fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019, oferecendo serviços interdisciplinares. ",
+      "tatianeText":"Tatiane, fundadora e diretora da clínica, trabalha na área de reabilitação neurofuncional desde 2009 e, ao longo de sua carreira, especializou-se em métodos voltados para o tratamento neurológico, como o Método Therasuit, com experiências internacionais, estimulação por Corrente Direta (TDCS), o Conceito Neuroevolutivo Bobath Pediátrico, entre outros."
     },
     "whyIntertherapy": {
       "title": "Por que Intertherapy?",
-      "text": "INTERTHERAPY: substantivo feminino que transmite a ideia de relações, trocas, coordenação, parcerias e contribuições entre áreas e pessoas. Inter = Interdisciplinaridade; Therapy = refere-se à ideia de terapia; Thera = representa a história de nossa equipe por meio da ação com protocolos intensivos."
+      "text": "substantivo feminino que transmite a ideia de relações, trocas, coordenação, parcerias e contribuições entre áreas e pessoas. Inter = Interdisciplinaridade; Therapy = refere-se à ideia de terapia; Thera = representa a história de nossa equipe por meio da ação com protocolos intensivos."
     },
     "vision": {
       "title": "VISÃO",

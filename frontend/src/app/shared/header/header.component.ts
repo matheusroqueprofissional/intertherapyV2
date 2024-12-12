@@ -21,7 +21,7 @@ export class HeaderComponent {
   private readonly translateService = inject(TranslateService);
   languageOptions: ILanguageOption[] = [];
   currentLanguage = 'PT-BR';
-  links = ['header.home-page', 'header.about', 'header.services', 'header.team', 'header.contact'];
+  links = ['header.home-page', 'header.about', 'header.services', 'header.contact'];
   hoverColors = ['#A8CF45', '#E50612', '#2DABE5', '#F58634', '#090909'];
   isHovered = [false, false, false, false, false]; // Estado de hover de cada link
   private readonly availableLanguages = ['EN-US', 'PT-BR'];
@@ -64,8 +64,24 @@ export class HeaderComponent {
   switchLanguage(lang: string): void {
     this.languageService.setLanguage(lang);
   }
+
   redirectTo(value: string) {
-    console.log(value);
-    this.router.navigate([value]);
+    const routeMap:any = {
+      'header.inicio': 'inicio',
+      'header.about': 'about',
+      'header.services': 'services',
+      'header.team': 'team',
+      'header.contact': 'contact'
+    };
+
+    // Navega utilizando a chave original (inglês)
+    var route = routeMap[value] || value;
+    if (route == 'header.home-page'){
+      route = ''
+    }
+    console.log('Navigating to:', route);
+    this.router.navigate([route]);
   }
+
+
 }
