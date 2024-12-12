@@ -1,4 +1,11 @@
 {
+  "header": {
+    "home-page": "Página Inicial",
+    "about": "Sobre Nós",
+    "services": "Serviços",
+    "team": "Equipe",
+    "contact": "Contato"
+  },
   "title": "Bem-vindo ao Dashboard",
   "mainPage": {
     "ourMission": {
@@ -7,43 +14,45 @@
     },
     "targetAudience": {
       "title": "Público-Alvo",
-      "text": [
-        "Pacientes pediátricos e adultos com algum tipo de condição neurológica",
-        "Atrasos no desenvolvimento",
-        "Síndromes genéticas (Síndrome de Down, doenças raras)",
-        "Deficiência intelectual",
-        "Autismo (ASD)",
-        "Outros distúrbios do sistema neurológico"
-      ]
+      "text": {
+        "items": {
+          "Pediatric and adult patients": "Pacientes pediátricos e adultos com algum tipo de condição neurológica",
+          "Developmental delays": "Atrasos no desenvolvimento",
+          "Genetic syndromes (Down syndrome, rare diseases)": "Síndromes genéticas",
+          "Intellectual disability": "Deficiência intelectual",
+          "Autism (ASD)": "Autismo (TEA)",
+          "Other neurological system disorders": "Outros transtornos do sistema neurológico"
+        }
+      }
     },
-    "ourSpecialties": {
+    "ourSpecialities": {
       "title": "NOSSAS ESPECIALIDADES",
-      "specialties": [
-        {
-          "title": "FISIOTERAPIA",
+      "specialties": {
+        "physiotherapy": {
+          "title": "Fisioterapia",
           "description": "Melhorar a função física e a qualidade de vida dos indivíduos por meio de técnicas e exercícios específicos."
         },
-        {
-          "title": "TERAPIA OCUPACIONAL",
+        "occupational therapy": {
+          "title": "Terapia Ocupacional",
           "description": "Promover a independência funcional e a qualidade de vida, por meio de intervenções que buscam melhorar as habilidades motoras, cognitivas e emocionais."
         },
-        {
-          "title": "FONOAUDIOLOGIA",
+        "speech therapy": {
+          "title": "Fonoaudiologia",
           "description": "Avaliar, diagnosticar e tratar distúrbios de comunicação, linguagem, deglutição e voz, com o objetivo de melhorar a função e a qualidade de vida dos pacientes."
         },
-        {
-          "title": "PSICOLOGIA",
+        "psychology": {
+          "title": "Psicologia",
           "description": "Compreender e tratar os aspectos emocionais, cognitivos e comportamentais, visando melhorar o bem-estar e a qualidade de vida dos indivíduos e suas famílias."
         },
-        {
-          "title": "PSICOPEDAGOGIA",
+        "psychopedagogy": {
+          "title": "Psicopedagogia",
           "description": "Compreender e intervir nos processos de aprendizagem, oferecendo estratégias para o desenvolvimento das habilidades educacionais e cognitivas."
         },
-        {
-          "title": "PSICOMOTRICIDADE",
+        "psychomotricity": {
+          "title": "Psicomotricidade",
           "description": "Utilizar o movimento e a expressão corporal para promover o desenvolvimento global da pessoa, integrando aspectos cognitivos, emocionais e motores."
         }
-      ]
+      }
     }
   },
   "aboutUs": {

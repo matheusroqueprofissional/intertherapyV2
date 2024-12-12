@@ -1,14 +1,41 @@
-<div class="col-12 header flex align-items-center gap-4 flex-wrap ">
+<div class="col-12 header flex align-items-center gap-4 flex-wrap">
   <div class="image">
     <img
-    loading="eager"
-    (click)="redirectTo('')" src="../../../assets/images/Intertherapy Logo.svg" alt="">
+      loading="eager"
+      (click)="redirectTo('')"
+      src="../../../assets/images/Intertherapy Logo.svg"
+      alt=""
+    />
   </div>
-  <div class="content flex gap-2  justify-content-end">
-    <button></button>
+  <div class="content flex gap-2 justify-content-end">
+    <div class="language-switcher">
+      <mat-form-field>
+        <mat-select
+          [(value)]="currentLanguage"
+          (selectionChange)="changeLanguage($event.value)"
+        >
+          <mat-option
+            *ngFor="let i of languageOptions"
+            [value]="i.value"
+          >
+            {{ i.label }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="link-container" *ngFor="let link of links; let i = index">
-      <a (click)="redirectTo(link)" (mouseover)="isHovered[i] = true" (mouseout)="isHovered[i] = false">{{link}}</a>
-      <div class="square" *ngIf="isHovered[i]" [ngStyle]="{'background-color': hoverColors[i]}"></div>
+      <a
+        (click)="redirectTo(link)"
+        (mouseover)="isHovered[i] = true"
+        (mouseout)="isHovered[i] = false"
+      >
+        {{ link|translate }}
+      </a>
+      <div
+        class="square"
+        *ngIf="isHovered[i]"
+        [ngStyle]="{ 'background-color': hoverColors[i] }"
+      ></div>
     </div>
   </div>
 </div>

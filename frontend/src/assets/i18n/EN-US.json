@@ -1,5 +1,11 @@
 {
-  "title": "Welcome to the Dashboard",
+  "header": {
+    "home-page": "Home Page",
+    "about": "About",
+    "services": "Services",
+    "team": "Team",
+    "contact": "Contact"
+  },
   "mainPage": {
     "ourMission": {
       "title": "OUR MISSION",
@@ -7,43 +13,45 @@
     },
     "targetAudience": {
       "title": "Target Audience",
-      "text": [
-        "Pediatric and adult patients with some type of neurological condition",
-        "Developmental delays",
-        "Genetic syndromes (Down syndrome, rare diseases)",
-        "Intellectual disability",
-        "Autism (ASD)",
-        "Other neurological system disorders"
-      ]
+      "text": {
+        "items": {
+          "Pediatric and adult patients": "Pediatric and adult patients with some type of neurological condition",
+          "Developmental delays": "Developmental delays",
+          "Genetic syndromes (Down syndrome, rare diseases)": "Genetic syndromes",
+          "Intellectual disability": "Intellectual disability",
+          "Autism (ASD)": "Autism (ASD)",
+          "Other neurological system disorders": "Other neurological system disorders"
+        }
+      }
     },
-    "ourSpecialties": {
-      "title": "OUR SPECIALTIES",
-      "specialties": [
-        {
-          "title": "PHYSIOTHERAPY",
+    "ourSpecialities": {
+      "title": "OUR SPECIALITIES",
+      "specialties": {
+        "physiotherapy": {
+          "title": "physiotherapy",
           "description": "Improve the physical function and quality of life of individuals through specific techniques and exercises."
         },
-        {
-          "title": "OCCUPATIONAL THERAPY",
+        "occupational therapy": {
+          "title": "occupational therapy",
           "description": "Promote functional independence and quality of life by improving motor, cognitive, and emotional skills through targeted interventions."
         },
-        {
-          "title": "SPEECH THERAPY",
+        "speech therapy": {
+          "title": "speech therapy",
           "description": "Assess, diagnose, and treat communication, language, swallowing, and voice disorders, aiming to improve the function and quality of life of patients."
         },
-        {
-          "title": "PSYCHOLOGY",
+        "psychology": {
+          "title": "psychology",
           "description": "Understand and treat emotional, cognitive, and behavioral aspects to enhance the well-being and quality of life of individuals and their families."
         },
-        {
-          "title": "PSYCHOPEDAGOGY",
+        "psychopedagogy": {
+          "title": "psychopedagogy",
           "description": "Understand and intervene in learning processes, offering strategies for the development of educational and cognitive skills."
         },
-        {
-          "title": "PSYCHOMOTRICITY",
+        "psychomotricity": {
+          "title": "psychomotricity",
           "description": "Use movement and body expression to promote the person's global development, integrating cognitive, emotional, and motor aspects."
         }
-      ]
+      }
     }
   },
   "aboutUs": {

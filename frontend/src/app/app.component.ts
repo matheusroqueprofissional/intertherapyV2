@@ -34,11 +34,12 @@ export class AppComponent implements OnInit {
   ) {
     // Verifica se está no ambiente do navegador
     if (isPlatformBrowser(this.platformId)) {
-      const userLang = navigator.language || 'en';
       const languageMap: { [key: string]: string } = {
         'en': 'EN-US',
         'pt': 'PT-BR',
       };
+      const userLang = 'en';
+
       const languageCode = userLang.split('-')[0];
       const mappedLang = languageMap[languageCode] || 'EN-US';
       this.translateService.setDefaultLang(mappedLang);

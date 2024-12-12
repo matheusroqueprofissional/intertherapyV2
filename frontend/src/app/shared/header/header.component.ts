@@ -1,21 +1,69 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../services/LanguageService/language.service';
+import { ILanguageOption } from '../components/language-swicher/language-swicher.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { forkJoin } from 'rxjs';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule,MatFormFieldModule, MatInputModule, FormsModule,MatSelectModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'], // Corrigi a propriedade 'styleUrl' para 'styleUrls'
 })
 export class HeaderComponent {
-  links = ['inicio', 'about', 'services', 'team', 'contact'];
+  private readonly translateService = inject(TranslateService);
+  languageOptions: ILanguageOption[] = [];
+  currentLanguage = 'PT-BR';
+  links = ['header.home-page', 'header.about', 'header.services', 'header.team', 'header.contact'];
   hoverColors = ['#A8CF45', '#E50612', '#2DABE5', '#F58634', '#090909'];
   isHovered = [false, false, false, false, false]; // Estado de hover de cada link
+  private readonly availableLanguages = ['EN-US', 'PT-BR'];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private languageService: LanguageService
+  ) {}
+  ngOnInit(): void {
+    this.translateService.addLangs(this.availableLanguages);
+    this.translateService.setDefaultLang('EN-US');
+    this.buildLanguageOptions();
+    this.changeLanguage(this.currentLanguage)
+  }
 
+  private buildLanguageOptions() {
+    const ENGLISH = this.translateService.get('EN-US');
+    const PORTUGUESE = this.translateService.get('PT-BR');
+
+
+    forkJoin([ENGLISH, PORTUGUESE]).subscribe((_response) => {
+      this.languageOptions = [
+        {
+          value: this.availableLanguages[0],
+          label: _response[0].toUpperCase(),
+        },
+        {
+          value: this.availableLanguages[1],
+          label: _response[1].toUpperCase(),
+        },
+      ];
+    });
+  }
+  changeLanguage(language: string) {
+    this.translateService.use(language);
+    this.currentLanguage = language;
+    localStorage.setItem('language', language);
+  }
+
+  switchLanguage(lang: string): void {
+    this.languageService.setLanguage(lang);
+  }
   redirectTo(value: string) {
     console.log(value);
     this.router.navigate([value]);
