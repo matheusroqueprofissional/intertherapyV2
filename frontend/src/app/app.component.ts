@@ -5,11 +5,11 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./shared/header/header.component";
 import { FooterComponent } from './shared/footer/footer.component';
-
+import { AngularVlibras } from 'angular-vlibras';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, TranslateModule],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent, TranslateModule,AngularVlibras],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
