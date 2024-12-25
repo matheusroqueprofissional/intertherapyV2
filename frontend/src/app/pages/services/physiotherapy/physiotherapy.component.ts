@@ -40,6 +40,7 @@ import { getFirestore } from '@angular/fire/firestore';
 import { appConfig } from '../../../app.config';
 import { Firestore, collection, getDocs } from '@angular/fire/firestore';
 import { TreatmentsComponent } from "../../../shared/components/treatments/treatments.component";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export interface DialogData {
   animal: string;
@@ -56,7 +57,7 @@ export interface DialogData {
   imports: [
     MatGridListModule,
     MatGridList,
-    TreatmentsAdminComponent,
+    MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
     FormsModule,

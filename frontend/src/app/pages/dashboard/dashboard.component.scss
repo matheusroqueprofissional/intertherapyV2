@@ -55,6 +55,7 @@
         padding: 0;
         margin: 0;
         li {
+          display: flex;
           padding-left: 0;
           margin-bottom: 10px;
           line-height: 1.5;
@@ -155,6 +156,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+@media screen and (max-width: 833px) {
+.material-symbols-outlined{
+  width: 4px;
+  font-size: 1px;
+}
 }
 
 }

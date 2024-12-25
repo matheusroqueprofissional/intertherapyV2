@@ -38,8 +38,8 @@ export class HeaderComponent {
   }
 
   private buildLanguageOptions() {
-    const ENGLISH = this.translateService.get('EN-US');
-    const PORTUGUESE = this.translateService.get('PT-BR');
+    const ENGLISH = this.translateService.get('EN');
+    const PORTUGUESE = this.translateService.get('PT');
 
 
     forkJoin([ENGLISH, PORTUGUESE]).subscribe((_response) => {

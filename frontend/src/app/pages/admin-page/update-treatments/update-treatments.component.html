@@ -12,13 +12,12 @@
     </mat-grid-tile>
   </mat-grid-list>
 
-  <!-- Botão para criar novo tratamento -->
   <div class="createTreatment">
     <button mat-flat-button (click)="openDialog()">criar tratamento</button>
   </div>
 </div>
 
-<!-- Template para caso não existam tratamentos -->
 <ng-template #template>
-  <p>não há itens</p>
+  <h3>Carregando tratamentos</h3>
+  <mat-spinner></mat-spinner>
 </ng-template>

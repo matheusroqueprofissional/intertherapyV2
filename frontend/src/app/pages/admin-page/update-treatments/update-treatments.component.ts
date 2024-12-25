@@ -27,6 +27,7 @@ import { TreatmentsAdminService } from '../../../shared/services/adminService/tr
 import { CommonModule } from '@angular/common';
 import { StorageService } from '../../../shared/services/adminService/storage/storage.service';
 import { TreatmentsInterface } from '../../../interfaces/treatments-interface';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 export interface DialogData {
   animal: string;
@@ -44,7 +45,8 @@ export interface DialogData {
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './update-treatments.component.html',
   styleUrls: ['../../../global.scss', './update-treatments.component.scss'],
