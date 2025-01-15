@@ -1,34 +1,42 @@
 <div class="subjectImage">
-  <h2>{{"mainPage.ourMission.title"|translate}}</h2>
-  <h1>FALE CONOSCO</h1>
+  <h1>{{"contact.title"|translate}}</h1>
 </div>
 
 <div class="contact-container">
   <section class="form-section">
     <h2>CONTATE-NOS</h2>
     <form id="contact-form">
-        <label for="name">Nome completo:</label>
-        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+      <label for="name">Nome completo:</label>
+      <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
-        <label for="contact-reason">Motivo do contato:</label>
-        <select id="contact-reason" name="reason">
-            <option value="">Selecione o motivo</option>
-            <option value="informacao">Informação</option>
-            <option value="suporte">Suporte</option>
-            <option value="outras">Outras</option>
-        </select>
+      <label for="contact-reason">Motivo do contato:</label>
+      <select id="contact-reason" name="reason">
+        <option value="">Selecione o motivo</option>
+        <option value="informacao">Informação</option>
+        <option value="suporte">Suporte</option>
+        <option value="outras">Outras</option>
+      </select>
 
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" placeholder="Digite sua mensagem" required></textarea>
 
-        <button type="submit">Enviar</button>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <div class="image-section">
-    <img src="assets/images/contact/mapa.png" alt="Descrição da imagem"> <!-- Altere 'sua_imagem.jpg' para o nome real da sua imagem -->
+  <div class="address">
+    <div class="googleMaps">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4005.722494536788!2d-47.0126394676553!3d-22.977324985206163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cdf3ff13ba43%3A0x1defa122b94a0786!2sCI%C3%ADnica%20Intertherapy%20-%20Neurohabilita%C3%A7%C3%A3o%20Intensiva!5e0!3m2!1spt-BR!2sbr!4v1689361174037!5m2!1spt-BR!2sbr" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="content">
+      <div class="addressWrite">
+        <p>Rua José von Zuben, 181 – Vila Santo Antônio – Valinhos/SP</p>
+      </div>
+      <div class="phone">
+        <p>Telefone: (19) 3929-9866</p>
+      </div>
+    </div>
   </div>
-</div>

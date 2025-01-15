@@ -9,8 +9,8 @@
   </div>
   <div class="content flex gap-2 justify-content-end align-items-center">
     <div class="language-switcher">
-      <mat-form-field class="selectLanguage">
-        <mat-select class="flex align-content-center justify-content-center"
+        <mat-select
+          style="width: 50px;"
           [(value)]="currentLanguage"
           (selectionChange)="changeLanguage($event.value)"
         >
@@ -21,7 +21,6 @@
             {{ i.label }}
           </mat-option>
         </mat-select>
-      </mat-form-field>
     </div>
     <div class="link-container" *ngFor="let link of links; let i = index">
       <a

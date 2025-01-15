@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../services/LanguageService/language.service';
-import { ILanguageOption } from '../components/language-swicher/language-swicher.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,6 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 
+export interface ILanguageOption {
+  value: string;
+  label: string;
+}
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -17,7 +20,10 @@ import {MatSelectModule} from '@angular/material/select';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'], // Corrigi a propriedade 'styleUrl' para 'styleUrls'
 })
+
+
 export class HeaderComponent {
+
   private readonly translateService = inject(TranslateService);
   languageOptions: ILanguageOption[] = [];
   currentLanguage = 'PT-BR';

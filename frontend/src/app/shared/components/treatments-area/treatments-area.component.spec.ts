@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SpeechTherapyComponent } from './speech-therapy.component';
+import { TreatmentsAreaComponent } from './treatments-area.component';
 
-describe('SpeechTherapyComponent', () => {
-  let component: SpeechTherapyComponent;
-  let fixture: ComponentFixture<SpeechTherapyComponent>;
+describe('TreatmentsAreaComponent', () => {
+  let component: TreatmentsAreaComponent;
+  let fixture: ComponentFixture<TreatmentsAreaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SpeechTherapyComponent]
+      imports: [TreatmentsAreaComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SpeechTherapyComponent);
+    fixture = TestBed.createComponent(TreatmentsAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
