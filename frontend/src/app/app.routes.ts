@@ -18,12 +18,6 @@ export const routes: Routes = [
   {
     path: 'services',
     component: ServicesComponent,
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-      },
-    ],
   },
   { path: 'team', component: TeamComponent },
   { path: 'contact', component: ContactComponent },
