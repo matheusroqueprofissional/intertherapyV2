@@ -10,6 +10,12 @@ import { UpdateEmployersComponent } from './pages/admin-page/update-employers/up
 import { UpdateTreatmentsComponent } from './pages/admin-page/update-treatments/update-treatments.component';
 import { SendImagesComponent } from './pages/admin-page/send-images/send-images.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { FisioterapiaComponent } from './pages/services/subpages/fisioterapia/fisioterapia.component';
+import { FonoaudiologiaComponent } from './pages/services/subpages/fonoaudiologia/fonoaudiologia.component';
+import { PsicologiaComponent } from './pages/services/subpages/psicologia/psicologia.component';
+import { PsicomotricidadeComponent } from './pages/services/subpages/psicomotricidade/psicomotricidade.component';
+import { PsicopedagogiaComponent } from './pages/services/subpages/psicopedagogia/psicopedagogia.component';
+import { TerapiaOcupacionalComponent } from './pages/services/subpages/terapia-ocupacional/terapia-ocupacional.component';
 
 export const routes: Routes = [
   { path: 'inicio', redirectTo: '' },
@@ -18,6 +24,15 @@ export const routes: Routes = [
   {
     path: 'services',
     component: ServicesComponent,
+    children: [
+        {path:'Fisioterapia',component:FisioterapiaComponent},
+        {path:'Terapia Ocupacional',redirectTo:'TerapiaOcupacional'},
+        {path:'TerapiaOcupacional',component:TerapiaOcupacionalComponent},
+        {path:'Fonoaudiologia',component:FonoaudiologiaComponent},
+        {path:'Psicomotricidade',component:PsicomotricidadeComponent},
+        {path:'Psicologia',component:PsicologiaComponent},
+        {path:'Psicopedagogia',component:PsicopedagogiaComponent},
+    ]
   },
   { path: 'team', component: TeamComponent },
   { path: 'contact', component: ContactComponent },

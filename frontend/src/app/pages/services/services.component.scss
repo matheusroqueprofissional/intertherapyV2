@@ -1,0 +1,52 @@
+.header{
+  background-image: url("../../../assets/images/_services/servicesSubject.svg");
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 315px;
+
+  h1{
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 72px;
+}
+
+}
+@import "../../global.scss";
+@import "../../variables.scss";
+
+.history {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+    img {
+      width: 200px;
+      cursor: pointer;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 311px 84px 301px;
+  color: white;
+
+}
+button {
+  color: white;
+}

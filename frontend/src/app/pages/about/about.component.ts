@@ -6,6 +6,7 @@ import { ButtonModule } from 'primeng/button';
 import { Tag, TagModule } from 'primeng/tag';
 import { Observable, of } from 'rxjs';
 import { AboutService } from '../../shared/services/about.service';
+import { CarouselComponent } from "../dashboard/carousel/carousel.component";
 
 export interface Product {
   id: string;
@@ -23,7 +24,7 @@ export interface Product {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [TranslateModule,CarouselModule, ButtonModule, TagModule],
+  imports: [TranslateModule, CarouselModule, ButtonModule, TagModule, CarouselComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })

@@ -1,0 +1,10 @@
+<div class="header">
+  <h1>NOSSOS SERVIÇOS</h1>
+</div>
+<section class="content">
+  <div class="buttons">
+    <button *ngFor="let cor of cores, let index = index" mat-button [ngStyle]="{'background-color': cor,'color':'white','font-family':'Epilogue','font-weight': 'bold','font-size': 18,'cursor': 'pointer',
+    'border': 'none'}" (click)="changeService(about[index])">{{about[index]}}</button>
+  </div>
+  <router-outlet></router-outlet>
+</section>
