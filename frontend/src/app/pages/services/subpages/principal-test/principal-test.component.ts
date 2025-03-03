@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { Services } from '../../shared/services';
 
 @Component({
@@ -10,6 +10,7 @@ import { Services } from '../../shared/services';
 })
 export class PrincipalTestComponent {
 
-  user = 'Matheus'; // Envia esse valor para o filho
+  @Input() service!: Services; // O template recebe os dados via Input
+
 
 }

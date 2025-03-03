@@ -1,0 +1,19 @@
+<div class="service-container">
+  <h2>{{ service.Title }}</h2>
+  <h3>{{ service.Subtitle }}</h3>
+  <p>{{ service.Content1 }}</p>
+
+  <h4>Formato da Avaliação</h4>
+  <p>{{ service.AssessmentFormat }}</p>
+
+  <h4>Formato do Conteúdo</h4>
+  <p>{{ service.ContentFormat }}</p>
+
+  <h4>O que levar?</h4>
+  <p>{{ service.WhatToTakeContent }}</p>
+
+  <h4>Tratamentos Disponíveis</h4>
+  <ul>
+    <li *ngFor="let treatment of service.Treatments">{{ treatment }}</li>
+  </ul>
+</div>
