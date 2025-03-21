@@ -1,4 +1,6 @@
 package com.Intertherapy.IntertherapySiteBackend.Treatment;
 
-public interface TreatmentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TreatmentRepository extends JpaRepository<TreatmentClass,Long> {
 }

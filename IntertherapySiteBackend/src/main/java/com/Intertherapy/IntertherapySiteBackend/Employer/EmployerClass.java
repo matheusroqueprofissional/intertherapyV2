@@ -24,13 +24,15 @@ public class EmployerClass {
     private String ImageUrl;
     private String Area;
 
-
-
     public EmployerClass(Integer o, String Name, String Resume, String ImageUrl, String Area) {
         this.Name = Name;
         this.Resume = Resume;
         this.ImageUrl = ImageUrl;
         this.Area = Area;
 
+        if(this.Name.isEmpty()||this.Resume.isEmpty()||this.ImageUrl.isEmpty()||this.Area.isEmpty()){
+            System.out.println("dados faltando\n{{this.Name}}\n{{this.Resume}}\n{{this.ImageUrl}}");
+            return;
+        }
     }
 }
