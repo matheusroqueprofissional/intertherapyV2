@@ -1,41 +1,33 @@
 package com.Intertherapy.IntertherapySiteBackend.Controller;
-
-import com.Intertherapy.IntertherapySiteBackend.Employer.EmployerClass;
-import com.Intertherapy.IntertherapySiteBackend.Employer.EmployerRecord;
-import com.Intertherapy.IntertherapySiteBackend.Employer.EmployerRepository;
-import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentClass;
-import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentRecord;
-import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentRepository;
+import java.util.List;
+import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentsClass;
+import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentsRecord;
+import com.Intertherapy.IntertherapySiteBackend.Treatment.TreatmentsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
-    EmployerRepository employerRepository;
-    @Autowired
-    TreatmentRepository treatmentRepository;
+    TreatmentsRepository treatmentsRepository;
 
     @GetMapping("/test")
     public String test() {
         return "test";
     }
 
-    @PostMapping("/RegisterEmployer")
-    public String ResgisterEmployer(@RequestBody EmployerRecord employer){
-        employerRepository.save(new EmployerClass(null,employer.Name(),employer.Resume(),employer.ImageUrl(),employer.Area()));
-        return employer.toString();
+    @GetMapping("/GetTreatments")
+    public List<TreatmentsClass> getTreatments() {
+        return treatmentsRepository.findAll();
     }
 
     @PostMapping("/RegisterTreatment")
-    public String RegisterTreatment(@RequestBody TreatmentRecord treatment){
-        treatmentRepository.save(new TreatmentClass(null,treatment.Name(),treatment.Description(),treatment.UrlImage(),treatment.Area()));
-        return treatment.toString();
+    public String ResgisterTreatment(@RequestBody TreatmentsRecord employer){
+        treatmentsRepository.save(new TreatmentsClass( employer.Name(), employer.Resume(), employer.ImageUrl(), employer.Area()));
+        return employer.toString();
     }
-
 
 }

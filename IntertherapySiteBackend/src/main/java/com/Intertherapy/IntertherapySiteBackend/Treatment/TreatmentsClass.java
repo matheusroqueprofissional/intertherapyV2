@@ -17,13 +17,10 @@ public class TreatmentsClass {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String Name;
-
     @Lob
     @Column(columnDefinition = "TEXT")
     private String Resume;
-
     private String ImageUrl;
     private String Area;
 
