@@ -11,23 +11,28 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "Treatments")
-@Entity(name = "intertherapyLocal2")
-public class TreatmentClass {
+@Entity
+public class TreatmentsClass {
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private String Name;
+
     @Lob
     @Column(columnDefinition = "TEXT")
-    private String Name;
-    private String Description;
-    private String Area;
-    private String UrlImage;
+    private String Resume;
 
-    public TreatmentClass(Integer o, String name, String description, String urlImage, String area) {
+    private String ImageUrl;
+    private String Area;
+
+    // Você pode deixar esse construtor auxiliar, se quiser validar manualmente
+    public TreatmentsClass(String name, String resume, String imageUrl, String area) {
         this.Name = name;
-        this.Description = description;
+        this.Resume = resume;
+        this.ImageUrl = imageUrl;
         this.Area = area;
-        this.UrlImage = urlImage;
 
     }
 }
