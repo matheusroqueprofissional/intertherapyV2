@@ -37,6 +37,8 @@ export class HeaderComponent {
     private languageService: LanguageService
   ) {}
   ngOnInit(): void {
+    localStorage.setItem('language', 'EN-US');
+
     this.translateService.addLangs(this.availableLanguages);
     this.translateService.setDefaultLang('EN-US');
     this.buildLanguageOptions();

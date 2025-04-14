@@ -1,23 +1,40 @@
-<div class="content">
-  <h2>tratamentos</h2>
-
-  <!-- Renderiza a grid de tratamentos, se houver -->
-  <mat-grid-list cols="3" rowHeight="2:1.4" class="teste" *ngIf="treatments && treatments.length; else template">
-    <mat-grid-tile *ngFor="let item of treatments; trackBy: trackByIndex">
-      <app-treatments-admin
-        [title]="item.name"
-        [imageUrl]="item.imageUrl"
-        [description]="item.description">
-      </app-treatments-admin>
-    </mat-grid-tile>
-  </mat-grid-list>
-
-  <div class="createTreatment">
-    <button mat-flat-button (click)="openDialog()">criar tratamento</button>
+<div class="history">
+  <h2>Histórico de posts e notícias</h2>
+  <div *ngIf="!isLoading; else loading">
+    <div *ngIf="!failLoad; else failLoadTemplate">
+      <div class="container">
+        <div class="grid-container">
+          <div class="container2" *ngFor="let item of combinedData">
+            <div class="content" *ngIf="item.treatment">
+              <img [src]="item.image.url" [alt]="item.image.name" />
+              <h1>{{ item.treatment.name }}</h1>
+              <p>{{ item.treatment.resume }}</p>
+              <div class="buttonsLine">
+                <button class="edit">
+                  <mat-icon>edit-icon</mat-icon>
+                  Editar Tratamento</button>
+                <button class="delete">
+                  <mat-icon>delete</mat-icon>
+                  Deletar tratamento</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<ng-template #template>
-  <h3>Carregando tratamentos</h3>
-  <mat-spinner></mat-spinner>
-</ng-template>
+  <button mat-stroked-button class="btn">+ Novo tratamento</button>
+
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+
+  <ng-template #failLoadTemplate>
+    <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1>Erro ao carregar itens</h1>
+      <p>Entrar em contato com DTI</p>
+      <p>dti&#64;intertherapy.com.br</p>
+    </div>
+  </ng-template>
+</div>

@@ -6,7 +6,6 @@ import { TeamComponent } from './pages/team/team.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AuthGuard } from './auth.guard';
-import { UpdateEmployersComponent } from './pages/admin-page/update-employers/update-employers.component';
 import { UpdateTreatmentsComponent } from './pages/admin-page/update-treatments/update-treatments.component';
 import { SendImagesComponent } from './pages/admin-page/send-images/send-images.component';
 import { ServicesComponent } from './pages/services/services.component';
@@ -52,10 +51,6 @@ export const routes: Routes = [
       {
         path:"Employers management",
         redirectTo:"employers Manager"
-      },
-      {
-        path: 'employers Manager',
-        component: UpdateEmployersComponent,
       },
       {
         path: 'treatments Manager',

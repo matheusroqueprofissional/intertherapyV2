@@ -1,132 +1,90 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  Input,
-  model,
-  OnInit,
-  signal,
-} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, inject } from '@angular/core';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatGridListModule, MatGridList } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
-import { TreatmentsAdminComponent } from '../../../shared/components/treatments-admin/treatments-admin.component';
-import { DialogComponent } from '../../../shared/components/createTreatment/dialog/dialog.component';
-import { TreatmentsAdminService } from '../../../shared/services/adminService/treatmentsAdmin/treatments-admin.service';
 import { CommonModule } from '@angular/common';
 import { StorageService } from '../../../shared/services/adminService/storage/storage.service';
-import { TreatmentsInterface } from '../../../interfaces/treatments-interface';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+import { TranslateModule } from '@ngx-translate/core';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { TreatmentsService } from '../../../shared/services/adminService/treatments/treatments.service';
+import { Treatments } from '../../../interfaces/treatments';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-update-treatments',
   standalone: true,
   imports: [
-    MatGridListModule,
-    MatGridList,
-    TreatmentsAdminComponent,
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
+    TranslateModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
+    MatIcon,
   ],
   templateUrl: './update-treatments.component.html',
   styleUrls: ['../../../global.scss', './update-treatments.component.scss'],
 })
 export class UpdateTreatmentsComponent implements OnInit {
-  readonly animal = signal('');
-  readonly name = model('');
-  readonly dialog = inject(MatDialog);
-  @Input() imageUrl:string = '';
-  @Input() image:string = '';
+  isLoading = false;
+  treatments: Treatments[] = [];
   images: { name: string; url: string; timeCreated: string }[] = [];
+  previewUrl: string | null = null;
+  cansend = false;
+  failLoad = false;
+  createTreatmentForm!: FormGroup;
+  constructor(
+    private storageService: StorageService,
+    private treatmentsService: TreatmentsService
+  ) {
 
 
-
-
-  constructor(private storageService:StorageService,private treatmentsAdminService: TreatmentsAdminService) {}
-  treatments!: any[]; // Variável para armazenar os tratamentos
-
+  }
+  combinedData: { image: any; treatment: any }[] = [];
   async ngOnInit(): Promise<void> {
-
-    console.log("inicio")
-    this.images = [];
-    this.images = await this.storageService.listTreatments();
-    console.log('Imagens carregadas (ordenadas):', this.images);
-    try {
-      this.images = (await this.storageService.listTreatments()).reverse();  } catch (error) {
-      console.error('Erro ao carregar imagens:', error);
-      this.images = []; // Garante que o template seja atualizado mesmo em caso de erro
-  }
-
+    this.isLoading = true;
     this.getTreatments();
-
-  }
-  trackByIndex(index: number, item: any): number {
-    return index;
-  }
-  errorMessage: string = ''; // Variável para armazenar mensagens de erro
-  treatmentsInterface!:TreatmentsInterface
-  getTreatments() {
+    this.previewUrl = '../../../assets/images/admin/noImage.png';
     try {
-      this.treatmentsAdminService.getTreatments().subscribe(
-        (response) => {
-          this.treatments = response; // Armazena a resposta na variável
-          console.log('Tratamentos recebidos:', this.treatments);
-
-                  // Associa o URL da imagem de `this.images` a cada tratamento
-        this.treatments = response.map((treatment: TreatmentsInterface, index: number) => {
-          // Garante que não ultrapasse o tamanho do array de imagens
-          const image = this.images[index] ? this.images[index].url : '';
-          return {
-            ...treatment,
-            imageUrl: image, // Adiciona a URL da imagem
-          };
-        });
-
-        console.log('Tratamentos com URLs de imagens:', this.treatments);
-        },
-        (error) => {
-          this.errorMessage = 'Erro ao buscar os tratamentos.';
-          console.error('Erro ao buscar os tratamentos:', error);
-        }
-      );
+      this.images = await this.storageService.listTreatments();
+      console.log('Imagens carregadas (ordenadas):', this.images);
+      this.combinedData = this.images.map((image, index) => ({
+        image,
+        treatment: this.treatments[index] || null,
+      }));
+      this.combinedData = this.images
+        .slice()
+        .reverse()
+        .map((image, index) => ({
+          image,
+          treatment: this.treatments[index] || null,
+        }));
     } catch (error) {
-      this.errorMessage = 'Erro inesperado.';
-      console.error('Erro inesperado:', error);
+      console.error('Erro ao carregar imagens:', error);
+      this.images = [];
+    } finally {
+      this.isLoading = false;
     }
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '70%', // 70% da largura da tela
-      height: '70%', // 70% da altura da tela
-      data: { name: this.name(), animal: this.animal() },
-    });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      if (result !== undefined) {
-        this.animal.set(result);
-      }
+  getTreatments() {
+    this.treatmentsService.getTreatments().subscribe({
+      next: (response) => {
+        this.treatments = response;
+        console.log(this.treatments);
+      },
+      error: (err) => {
+        console.error('erro ao buscar tratamentos', err);
+        this.failLoad = true;
+        console.log(this.failLoad);
+      },
     });
   }
 }

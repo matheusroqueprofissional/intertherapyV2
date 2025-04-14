@@ -1,4 +1,3 @@
-import { Treatments } from "./treatments"
 
 export interface Services {
   Title:String,
@@ -8,7 +7,4 @@ export interface Services {
   AssessmentFormat:String,
   ContentFormat:String,
   WhatToTakeContent:String
-  Treatments:Treatments[
-
-  ]
 }

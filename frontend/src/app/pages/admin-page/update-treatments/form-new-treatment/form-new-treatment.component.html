@@ -1,0 +1,63 @@
+<form>
+  <label>Nome:</label>
+  name
+resume
+area
+imageUrl
+</form>
+
+
+<form [formGroup]="createTreatmentForm" class="example-form">
+  <!--ToDo Nome-->
+  <mat-form-field class="example-full-width">
+    <mat-label>Nome</mat-label>
+    <input type="email" matInput formControlName="name" [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+
+  <!--ToDo Resume-->
+    <mat-label>resume</mat-label>
+    <input type="email" matInput formControlName="name"
+    [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+
+  <!--ToDo Area-->
+    <mat-label>area</mat-label>
+    <input type="email" matInput formControlName="name"
+    [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+
+  <!--ToDo ImageUrl-->
+    <mat-label>imageUrl</mat-label>
+    <input type="email" matInput formControlName="name"
+    [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (emailFormControl.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+</form>

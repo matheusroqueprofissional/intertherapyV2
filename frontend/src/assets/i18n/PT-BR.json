@@ -60,7 +60,22 @@
       "historyTitle": "HISTÓRIA",
       "the clinic":"A Clínica",
       "the founding": "foi fundada pela fisioterapeuta Tatiane Tedeschi Roque em 14 de janeiro de 2019, oferecendo serviços interdisciplinares. ",
-      "tatianeText":"Tatiane, fundadora e diretora da clínica, trabalha na área de reabilitação neurofuncional desde 2009 e, ao longo de sua carreira, especializou-se em métodos voltados para o tratamento neurológico, como o Método Therasuit, com experiências internacionais, estimulação por Corrente Direta (TDCS), o Conceito Neuroevolutivo Bobath Pediátrico, entre outros."
+      "tatianeText":"Tatiane, fundadora e diretora da clínica, trabalha na área de reabilitação neurofuncional desde 2009 e, ao longo de sua carreira, especializou-se em métodos voltados para o tratamento neurológico, como o Método Therasuit, com experiências internacionais, estimulação por Corrente Direta (TDCS), o Conceito Neuroevolutivo Bobath Pediátrico, entre outros.",
+      "Values-Text":
+      {
+        "Interdisciplinarity":"Interdisciplinaridade",
+        "Sensitivity":"Sensibilidade",
+        "Welcoming":"Acolhimento",
+        "Ethics":"Ética",
+        "Specificity":"Especificidade",
+        "Commitment":"Comprometimento",
+        "Objectivity":"Objetividade",
+        "Focus":"Foco",
+        "Knowledge":"Conhecimento",
+        "Dedication":"Dedicação",
+        "Love":"Amor"
+      },
+      "Vision-Text":"Ser referência na área da Neurohabilitação por oferecer suporte terapêutico interdisciplinar diferenciado, com especificade e excelência, suprindo completamente as necessidades de nossos pacientes e de seus familiares, garantindo que cada história seja individualmente única e rica em detalhes dentro de nosso acompanhamento terapêutico."
     },
     "whyIntertherapy": {
       "title": "Por que Intertherapy?",

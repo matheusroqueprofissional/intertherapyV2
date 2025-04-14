@@ -56,6 +56,28 @@
   },
   "aboutUs": {
     "history": {
+      "historyTitle": "HISTORY",
+      "the clinic":"the clinic",
+      "aboutUs.history.tatianeText":"Tatiane, founder and director of the clinic, has worked in the area of ​​neurofunctional rehabilitation since 2009 and, throughout her career, has specialized in methods aimed at neurological treatment, such as the Therasuit Method, with international experience, Direct Current Stimulation (TDCS), the Bobath Pediatric Neuroevolutionary Concept, among others.",
+      "Interdisciplinary":"Interdisciplinary",
+      "refers":"refers to the idea of ​​therapy / Thera = representing the history of our team through action with intensive protocols.",
+      "Vision":"Vision",
+      "Vision-Text":"To be a reference in the area of ​​Neurohabilitation by offering differentiated interdisciplinary therapeutic support, with specificity and excellence, completely meeting the needs of our patients and their families, ensuring that each story is individually unique and rich in details within our therapeutic monitoring.",
+      "Values":"Values",
+      "Values-Text":
+        {
+          "Interdisciplinarity": "Interdisciplinarity",
+          "Sensitivity": "Sensitivity",
+          "Welcoming": "Welcoming",
+          "Ethics": "Ethics",
+          "Specificity": "Specificity",
+          "Commitment": "Commitment",
+          "Objectivity": "Objectivity",
+          "Focus": "Focus",
+          "Knowledge": "Knowledge",
+          "Dedication": "Dedication",
+          "Love": "Love"
+        },
       "title": "ABOUT US - HISTORY",
       "text": "The Intertherapy Clinic was founded by physiotherapist Tatiane Tedeschi Roque on January 14, 2019, offering interdisciplinary services. Tatiane, the founder and director of the clinic, has worked in the neurofunctional rehabilitation field since 2009. Over her career, she has specialized in methods aimed at neurological treatment, such as the Therasuit Method, with international experience, direct current stimulation (TDCS), the Pediatric Neurodevelopmental Bobath Concept, among others."
     },

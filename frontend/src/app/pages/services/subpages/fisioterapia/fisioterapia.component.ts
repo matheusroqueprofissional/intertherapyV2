@@ -10,14 +10,5 @@ import { Services } from '../../shared/services';
   styleUrl: './fisioterapia.component.scss'
 })
 export class FisioterapiaComponent {
-  Fisio: Services = {
-    Title: "Fisioterapia",
-    urlImage:"test",
-    Subtitle: "Reabilitação e cuidados preventivos",
-    Content1: "Tratamento para problemas musculares e articulares.",
-    AssessmentFormat: "Consulta presencial com avaliação funcional",
-    ContentFormat: "Sessões individuais",
-    WhatToTakeContent: "Roupas leves e exames médicos",
-    Treatments: ["Alongamento", "Reeducação Postural", "Fortalecimento Muscular"]
-  };
+
 }
