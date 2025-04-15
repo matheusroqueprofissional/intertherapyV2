@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <button mat-stroked-button class="btn">+ Novo tratamento</button>
+  <button mat-stroked-button (click)="openDialog()" class="btn">+ Novo tratamento</button>
 
   <ng-template #loading>
     <mat-spinner></mat-spinner>

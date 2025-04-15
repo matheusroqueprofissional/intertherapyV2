@@ -11,7 +11,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { TreatmentsService } from '../../../shared/services/adminService/treatments/treatments.service';
 import { Treatments } from '../../../interfaces/treatments';
 import { MatIcon } from '@angular/material/icon';
-
+import {
+  MatDialog,
+} from '@angular/material/dialog';
+import { FormNewTreatmentComponent } from './form-new-treatment/form-new-treatment.component';
 @Component({
   selector: 'app-update-treatments',
   standalone: true,
@@ -27,6 +30,7 @@ import { MatIcon } from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatGridListModule,
     MatIcon,
+
   ],
   templateUrl: './update-treatments.component.html',
   styleUrls: ['../../../global.scss', './update-treatments.component.scss'],
@@ -38,6 +42,7 @@ export class UpdateTreatmentsComponent implements OnInit {
   previewUrl: string | null = null;
   cansend = false;
   failLoad = false;
+  readonly dialog = inject(MatDialog);
   createTreatmentForm!: FormGroup;
   constructor(
     private storageService: StorageService,
@@ -72,7 +77,13 @@ export class UpdateTreatmentsComponent implements OnInit {
       this.isLoading = false;
     }
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FormNewTreatmentComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
 
   getTreatments() {
     this.treatmentsService.getTreatments().subscribe({

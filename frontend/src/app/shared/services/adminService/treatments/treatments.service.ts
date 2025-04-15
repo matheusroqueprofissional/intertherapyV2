@@ -18,7 +18,7 @@ export class TreatmentsService {
     return this.http.get<Treatments[]>(this.baseget)
   }
 
-  postTreatments(treatments:Treatments):Observable<Treatments[]>{
-    return this.http.post<Treatments[]>(this.basepost, treatments)
+  postTreatments(treatments: Treatments): Observable<any> {
+    return this.http.post<Treatments[]>('http://127.0.0.1:8080/admin/RegisterTreatment', treatments)
   }
 }

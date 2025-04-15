@@ -1,6 +1,6 @@
 export interface Treatments {
-  name:String
-  resume:String
-  area:String
-  image_url:String
+  Name:String
+  Resume:String
+  Area:String
+  Image_url:String
 }
