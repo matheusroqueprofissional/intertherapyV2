@@ -43,12 +43,10 @@ export class FormNewTreatmentComponent implements ErrorStateMatcher {
     this.treatmentsService.postTreatments(formData).subscribe({
       next: () => {
         console.log('Tratamento criado com sucesso!');
-        console.log(formData)
-        console.log(formData.value)
       },
       error: (err) => {
         console.error('Erro ao criar tratamento:', err);
-        console.log(formData)
+
       }
     });
   }
