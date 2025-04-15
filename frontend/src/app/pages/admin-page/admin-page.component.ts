@@ -38,11 +38,10 @@ export class AdminPageComponent implements OnInit {
     this.previewUrl = '../../../assets/images/admin/noImage.png';
   }
 
-  cores: string[] = ['#F58634', '#A8CF45', '#2DABE5'];
+  cores: string[] = ['#F58634', '#A8CF45'];
   about: string[] = [
     'Carousel dashboard management',
     'Treatments management',
-    'Employers management',
   ];
 
   previewUrl: string | null = null;

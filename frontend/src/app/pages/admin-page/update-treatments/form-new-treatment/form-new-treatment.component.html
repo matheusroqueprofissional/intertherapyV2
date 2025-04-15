@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Hih2>
+<h2 mat-dialog-title>Cadastrar tratamento</h2>
 <mat-dialog-content>
 
 
@@ -48,9 +48,8 @@
   <mat-form-field class="example-full-width">
   <!--ToDo ImageUrl-->
     <mat-label>imageUrl</mat-label>
-    <input type="email" matInput formControlName="ImageUrl"
-    [errorStateMatcher]="matcher"
-           placeholder="Ex. pat@example.com">
+    <input type="file" matInput formControlName="ImageUrl"
+    [errorStateMatcher]="matcher">
     <mat-hint>Errors appear instantly!</mat-hint>
     @if (createTreatmentForm.hasError('email') && !createTreatmentForm.hasError('required')) {
       <mat-error>Please enter a valid email address</mat-error>
