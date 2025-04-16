@@ -13,7 +13,7 @@
                 <button class="edit">
                   <mat-icon>edit-icon</mat-icon>
                   Editar Tratamento</button>
-                <button class="delete">
+                <button class="delete" (click)="deleteImage(item.image.url)">
                   <mat-icon>delete</mat-icon>
                   Deletar tratamento</button>
               </div>

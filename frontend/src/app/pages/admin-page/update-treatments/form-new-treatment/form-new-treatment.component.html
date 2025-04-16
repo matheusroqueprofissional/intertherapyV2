@@ -6,7 +6,7 @@
   <!--ToDo Nome-->
   <mat-form-field class="example-full-width">
     <mat-label>Nome</mat-label>
-    <input type="email" matInput formControlName="Name" [errorStateMatcher]="matcher"
+    <input type="email" matInput formControlName="Name"
            placeholder="Ex. pat@example.com">
     <mat-hint>Errors appear instantly!</mat-hint>
     @if (createTreatmentForm.hasError('email') && !createTreatmentForm.hasError('required')) {
@@ -20,7 +20,7 @@
   <mat-form-field class="example-full-width">
     <mat-label>resume</mat-label>
     <input type="email" matInput formControlName="Resume"
-    [errorStateMatcher]="matcher"
+
            placeholder="Ex. pat@example.com">
     <mat-hint>Errors appear instantly!</mat-hint>
     @if (createTreatmentForm.hasError('email') && !createTreatmentForm.hasError('required')) {
@@ -35,7 +35,7 @@
 
     <mat-label>area</mat-label>
     <input type="email" matInput formControlName="Area"
-    [errorStateMatcher]="matcher"
+
            placeholder="Ex. pat@example.com">
     <mat-hint>Errors appear instantly!</mat-hint>
     @if (createTreatmentForm.hasError('email') && !createTreatmentForm.hasError('required')) {
@@ -49,7 +49,7 @@
   <!--ToDo ImageUrl-->
     <mat-label>imageUrl</mat-label>
     <input type="file" matInput formControlName="ImageUrl"
-    [errorStateMatcher]="matcher">
+     (change)="onFileSelected($event)">
     <mat-hint>Errors appear instantly!</mat-hint>
     @if (createTreatmentForm.hasError('email') && !createTreatmentForm.hasError('required')) {
       <mat-error>Please enter a valid email address</mat-error>
@@ -59,6 +59,6 @@
     }
   </mat-form-field>
 
-  <button mat-stroked-button (click)="onSubmit()"> enviar </button>
+  <button mat-stroked-button (click)="onSubmit()" type="submit"> enviar </button>
 </form>
 </mat-dialog-content>
