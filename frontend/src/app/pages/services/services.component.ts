@@ -3,16 +3,21 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterOutlet, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { StorageService } from '../../shared/services/adminService/storage/storage.service';
+import { Storage, ref, deleteObject } from '@angular/fire/storage';
+import { TreatmentsService } from '../../shared/services/adminService/treatments/treatments.service';
+import { Treatments } from '../../interfaces/treatments';
 
 @Component({
   selector: 'app-services',
   standalone: true,
   imports: [
+    MatIcon,
     TranslateModule,
     CommonModule,
     FormsModule,
@@ -27,9 +32,18 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './services.component.scss',
 })
 export class ServicesComponent {
-  constructor(private router: Router) {}
-
+  constructor(private router: Router,
+        private storage: Storage,
+        private storageService: StorageService,
+        private treatmentsService: TreatmentsService
+  ) {}
+  isLoading = false;
+  treatments: Treatments[] = [];
+  images: { name: string; url: string; timeCreated: string }[] = [];
+  failLoad = false;
   cores: string[] = ['#F58634', '#A8CF45', '#2DABE5','#E50612','#F58634', '#A8CF45'];
+  combinedData: { image: any; treatment: any }[] = [];
+
   about: string[] = [
     'Fisioterapia',
     'Terapia Ocupacional',
@@ -40,10 +54,46 @@ export class ServicesComponent {
   ];
 
 
+  async ngOnInit(): Promise<void> {
 
+    this.isLoading = true;
+    this.getTreatments();
+    try {
+      this.images = await this.storageService.listTreatments();
+      console.log('Imagens carregadas (ordenadas):', this.images);
+      this.combinedData = this.images.map((image, index) => ({
+        image,
+        treatment: this.treatments[index] || null,
+      }));
+      this.combinedData = this.images
+        .slice()
+        .reverse()
+        .map((image, index) => ({
+          image,
+          treatment: this.treatments[index] || null,
+        }));
+    } catch (error) {
+      console.error('Erro ao carregar imagens:', error);
+      this.images = [];
+    } finally {
+      this.isLoading = false;
+    }
 
-  isLoading: boolean = false;
+  }
 
+  getTreatments() {
+    this.treatmentsService.getTreatments().subscribe({
+      next: (response) => {
+        this.treatments = response;
+        console.log(this.treatments);
+      },
+      error: (err) => {
+        console.error('erro ao buscar tratamentos', err);
+        this.failLoad = true;
+        console.log(this.failLoad);
+      },
+    });
+  }
   changeService(about: string) {
     this.isLoading = true;
     this.router.navigate(['services/' + about]);

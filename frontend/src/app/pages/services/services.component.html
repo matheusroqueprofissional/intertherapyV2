@@ -7,4 +7,31 @@
     'border': 'none'}" (click)="changeService(about[index])">{{about[index]}}</button>
   </div>
   <router-outlet></router-outlet>
+  <div *ngIf="!isLoading; else loading">
+    <div *ngIf="!failLoad; else failLoadTemplate">
+      <div class="container">
+        <div class="grid-container">
+          <div class="container2" *ngFor="let item of combinedData">
+            <div class="content" *ngIf="item.treatment">
+              <img [src]="item.image.url" [alt]="item.image.name" />
+              <h1>{{ item.treatment.name }}</h1>
+              <p>{{ item.treatment.resume }}</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
+
+<ng-template #failLoadTemplate>
+  <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h1>Erro ao carregar itens</h1>
+    <p>Entrar em contato com DTI</p>
+    <p>dti&#64;intertherapy.com.br</p>
+  </div>
+</ng-template>

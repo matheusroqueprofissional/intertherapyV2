@@ -39,8 +39,6 @@ export class UpdateTreatmentsComponent implements OnInit {
   isLoading = false;
   treatments: Treatments[] = [];
   images: { name: string; url: string; timeCreated: string }[] = [];
-  previewUrl: string | null = null;
-  cansend = false;
   failLoad = false;
   readonly dialog = inject(MatDialog);
   createTreatmentForm!: FormGroup;
