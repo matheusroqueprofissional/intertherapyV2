@@ -22,7 +22,7 @@ public class EmailController {
     @PostMapping("/sendemail")
     public String sendEmail(@RequestBody sendEmailRecord sendemail ) {
         try{
-             
+              
         emailservice.enviarEmailTexto(
                 sendemail.from(),
                 sendemail.to(),
