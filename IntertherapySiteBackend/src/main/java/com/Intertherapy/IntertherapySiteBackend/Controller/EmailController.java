@@ -25,7 +25,6 @@ public class EmailController {
                
         emailservice.enviarEmailTexto(
                 sendemail.from(),
-                sendemail.to(),
                 sendemail.about(),
                 "formulario de contato: \n\n"+
                 "\nNome completo:"+sendemail.name()+

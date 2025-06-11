@@ -7,10 +7,10 @@
     <h2>CONTATE-NOS</h2>
     <form id="contact-form" [formGroup]="sendemailForm">
       <label for="name">Nome completo:</label>
-      <input type="text" id="name" formControlName="username" name="name" placeholder="Digite seu nome completo" required>
+      <input type="text" id="name" formControlName="name" name="name" placeholder="Digite seu nome completo" required>
 
       <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required formControlName="email">
+      <input type="email" id="email" name="from" placeholder="Digite seu e-mail" required formControlName="from">
 
       <label for="contact-reason">Motivo do contato:</label>
       <select id="contact-reason" name="reason" formControlName="about">

@@ -16,8 +16,8 @@ export class ContactComponent {
   email:Email | undefined
   constructor(private fb:FormBuilder,private contactService:ContactService){
     this.sendemailForm = this.fb.group({
-      username:[this.email?.username, [Validators.minLength(4), Validators.required]],
-      email:[this.email?.email,[Validators.minLength(4), Validators.required]],
+      name:[this.email?.name, [Validators.minLength(4), Validators.required]],
+      from:[this.email?.from,[Validators.minLength(4), Validators.required]],
       about:[this.email?.about,[Validators.minLength(4), Validators.required]],
       message:[this.email?.message,[Validators.minLength(4), Validators.required]],
     })

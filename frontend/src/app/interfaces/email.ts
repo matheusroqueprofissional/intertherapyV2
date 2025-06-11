@@ -1,7 +1,7 @@
 
 export interface Email{
-	username:String,
-	email:String,
+	name:String,
+	from:String,
 	about:String,
 	message:String,
 }
