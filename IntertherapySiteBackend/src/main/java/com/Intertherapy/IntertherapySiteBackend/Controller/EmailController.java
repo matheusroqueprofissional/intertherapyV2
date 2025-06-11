@@ -22,11 +22,16 @@ public class EmailController {
     @PostMapping("/sendemail")
     public String sendEmail(@RequestBody sendEmailRecord sendemail ) {
         try{
+            
         emailservice.enviarEmailTexto(
                 sendemail.from(),
                 sendemail.to(),
                 sendemail.about(),
-                sendemail.message()
+                "formulario de contato: \n\n"+
+                "\nNome completo:"+sendemail.name()+
+                "\nEmail:"+sendemail.from()+
+                "\nAssunto:"+sendemail.about()+
+                "\nMensagem:"+sendemail.message() 
         );
         return "email enviado com sucesso: ";
         }
