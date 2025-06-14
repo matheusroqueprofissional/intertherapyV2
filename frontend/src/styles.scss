@@ -16,3 +16,37 @@ body {
 body {
   margin: 0;
 }
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  /* Remove a sombra padrão */
+  box-shadow: none !important;
+  border: none;
+  /* Se quiser remover qualquer raio de borda que possa vir daqui */
+  border-radius: 0 !important;
+
+  /* Se houver algum padding/margin indesejado aplicado por esta classe */
+  padding: 0 !important;
+  margin: 0 !important;
+
+  /* Você também pode resetar o background se quiser ter certeza que não há sobreposição */
+  // background-color: unset !important; /* Ou defina sua cor específica aqui */
+
+}
+
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  /* 1. Para remover completamente a sombra (o efeito "flutuante") */
+  box-shadow: none !important;
+
+  /* 2. Para remover os cantos arredondados e deixá-los quadrados */
+  border-radius: 0 !important;
+
+  /* 3. Se você quiser controlar o padding interno diretamente aqui, por exemplo, removê-lo */
+  padding: 0 !important; /* ou defina um valor específico como 8px */
+
+  /* 4. Para garantir que o background seja transparente ou definido pela classe pai */
+  background-color: transparent !important; /* Ou use unset, ou até mesmo sua cor aqui se preferir */
+
+  /* 5. Se houver alguma transição indesejada que você queira desativar */
+  transition: none !important;
+}

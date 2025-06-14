@@ -16,6 +16,9 @@ export class FooterComponent {
   constructor(private router: Router) {}
 
   redirectTo(value: string) {
+    if(value =="Sobre nós"){
+      value ="about"
+    }
     console.log(value);
     this.router.navigate([value]);
   }

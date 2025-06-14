@@ -118,3 +118,23 @@ footer {
 textarea {
   resize: none;
 }
+
+.snackbar-content {
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 15px;
+
+  &.success {
+    background-color: #4caf50; // Verde
+  }
+
+  &.error {
+    background-color: #f44336; // Vermelho
+  }
+}

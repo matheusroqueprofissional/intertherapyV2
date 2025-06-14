@@ -1,11 +1,14 @@
 @import "../../global.scss";
-
+.imagem{
+  padding: 20px 0 20px 0;
+}
 .container {
   display: flex;
   .content {
     display: flex;
     gap: 217px;
-    padding: 0 0 0 217px;
+    margin: 0 0 0 0;
+    padding: 20px 0 20px 217px;
     .mapa {
       align-items: left;
       justify-content: center;
@@ -30,9 +33,11 @@
     font-family: "Bebas Neue", sans-serif;
     font-size: 24px;
     letter-spacing: 3.5%;
+    margin: 0;
   }
 
   a {
+    cursor: pointer;
     text-decoration: none;
     color: black;
   }

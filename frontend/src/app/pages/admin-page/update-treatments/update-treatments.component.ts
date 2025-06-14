@@ -101,6 +101,7 @@ export class UpdateTreatmentsComponent implements OnInit {
 
     // Atualiza lista de imagens (opcional)
     this.images = this.images.filter(image => image.url !== url);
+    location.reload();
   } catch (error) {
     console.error('Erro ao deletar o arquivo:', error);
   }

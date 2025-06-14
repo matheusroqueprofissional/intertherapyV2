@@ -9,6 +9,8 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { Component } from '@angular/core';
 import { TranslateModuleModule } from './shared/translate-module/translate-module.module';
 import { AdminModuleModule } from './shared/admin-module/admin-module.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -36,9 +38,11 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
+    provideAnimations(),
     provideAnalytics(() => getAnalytics()),
     provideStorage(() => getStorage()), // Provedor do Firebase Storage
     ScreenTrackingService, // Rastreamento de tela para analytics
-    UserTrackingService // Rastreamento de usuário para analytics
+    UserTrackingService, // Rastreamento de usuário para analytics
+    MatSnackBarModule
   ],
 };

@@ -1,0 +1,56 @@
+.snackbar-content {
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  min-width: 250px;
+
+  &.success {
+    background-color: #4caf50;
+  }
+
+  &.error {
+    background-color: #f44336;
+  }
+
+  &.info {
+    background-color: #2196f3;
+  }
+
+  &.warning {
+    background-color: #ff9800;
+  }
+}
+
+span{
+    background-color: #f44336;
+    color: white;
+    border: none;
+    button{
+      color: white;
+      font-size: 24px;
+    }
+}
+
+mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  display: none !important;
+
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+  display: none;
+  background-color: blue;
+}
+    button{
+      color: white !important;
+      font-size: 18px;
+    }
+    button:hover{
+          background-color: #c92c2c;
+
+    }

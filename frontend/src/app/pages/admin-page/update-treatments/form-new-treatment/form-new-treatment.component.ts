@@ -52,7 +52,7 @@ export class FormNewTreatmentComponent implements ErrorStateMatcher {
   async onSubmit() {
     if (!this.selectedFile) return;
 
-    const filePath = `imagens/${Date.now()}_${this.selectedFile.name}`;
+    const filePath = `imagesTreatment/${Date.now()}_${this.selectedFile.name}`;
     const fileRef = ref(this.storage, filePath);
     const snapshot = await uploadBytes(fileRef, this.selectedFile);
     const downloadURL = await getDownloadURL(snapshot.ref);
