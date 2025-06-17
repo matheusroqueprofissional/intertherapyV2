@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-services-content',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './services-content.component.html',
   styleUrls: ['../../../../global.scss','./services-content.component.scss', ]
 })
@@ -24,6 +25,7 @@ export class ServicesContentComponent {
     @Input() WhatGet3:String = ""
     @Input() WhatGet4:String = ""
     @Input() WhatGet5:String = ""
+    @Input() TitleColorClass: string = '';
 
     rota:String =""
     ngOnInit() {
