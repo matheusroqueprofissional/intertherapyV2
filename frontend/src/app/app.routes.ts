@@ -15,24 +15,28 @@ import { PsicologiaComponent } from './pages/services/subpages/psicologia/psicol
 import { PsicomotricidadeComponent } from './pages/services/subpages/psicomotricidade/psicomotricidade.component';
 import { PsicopedagogiaComponent } from './pages/services/subpages/psicopedagogia/psicopedagogia.component';
 import { TerapiaOcupacionalComponent } from './pages/services/subpages/terapia-ocupacional/terapia-ocupacional.component';
+import { ServicesContentComponent } from './pages/services/subpages/services-content/services-content.component';
 
 export const routes: Routes = [
   { path: 'inicio', redirectTo: '' },
   { path: '', component: DashboardComponent },
   { path: 'about', component: AboutComponent },
   {
-    path: 'services',
-    component: ServicesComponent,
-    children: [
-        {path:'Fisioterapia',component:FisioterapiaComponent},
-        {path:'Terapia Ocupacional',redirectTo:'TerapiaOcupacional'},
-        {path:'TerapiaOcupacional',component:TerapiaOcupacionalComponent},
-        {path:'Fonoaudiologia',component:FonoaudiologiaComponent},
-        {path:'Psicomotricidade',component:PsicomotricidadeComponent},
-        {path:'Psicologia',component:PsicologiaComponent},
-        {path:'Psicopedagogia',component:PsicopedagogiaComponent},
-    ]
-  },
+  path: 'services',
+  component: ServicesComponent,
+  children: [
+    { path: '', redirectTo: 'Fisioterapia', pathMatch: 'full' }, // redireciona /services para /services/Fisioterapia
+    { path: 'Fisioterapia', component: FisioterapiaComponent },
+    { path: 'Terapia Ocupacional',component:TerapiaOcupacionalComponent }, // opcional, pode remover se não for usar espaço no path
+    { path: 'TerapiaOcupacional', component: TerapiaOcupacionalComponent },
+    { path: 'Fonoaudiologia', component: FonoaudiologiaComponent },
+    { path: 'Psicomotricidade', component: PsicomotricidadeComponent },
+    { path: 'Psicologia', component: PsicologiaComponent },
+    { path: 'Psicopedagogia', component: PsicopedagogiaComponent },
+    { path: 'Teste', component: ServicesContentComponent }
+  ]
+},
+
   { path: 'team', component: TeamComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
