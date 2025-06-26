@@ -7,10 +7,12 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogContent } from '@angular/material/dialog';
 import { TreatmentsService } from '../../../../shared/services/adminService/treatments/treatments.service';
 import { Storage, ref, uploadBytes, getDownloadURL, getStorage } from '@angular/fire/storage';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @Component({
   selector: 'app-form-new-treatment',
   standalone: true,
   imports: [
+    MatProgressSpinnerModule,
     MatDialogContent,FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule
   ],
   templateUrl: './form-new-treatment.component.html',
@@ -25,6 +27,7 @@ export class FormNewTreatmentComponent implements ErrorStateMatcher {
     Image_url: ''
   };;
   matcher = new ErrorStateMatcher();
+  loading:boolean = false;
   constructor(private storage: Storage,private fb: FormBuilder, private treatmentsService: TreatmentsService
   ) {
     this.createTreatmentForm = this.fb.group({
@@ -50,6 +53,7 @@ export class FormNewTreatmentComponent implements ErrorStateMatcher {
 
 
   async onSubmit() {
+    this.loading = true
     if (!this.selectedFile) return;
 
     const filePath = `imagesTreatment/${Date.now()}_${this.selectedFile.name}`;
@@ -77,9 +81,11 @@ export class FormNewTreatmentComponent implements ErrorStateMatcher {
     this.treatmentsService.postTreatments(formData).subscribe({
       next: () => {
         console.log('Tratamento criado com sucesso!');
+        this.loading = false
       },
       error: (err) => {
         console.error('Erro ao criar tratamento:', err);
+        this.loading = false
 
       }
     });

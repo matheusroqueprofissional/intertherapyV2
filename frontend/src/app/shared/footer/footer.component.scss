@@ -1,6 +1,5 @@
 @import "../../global.scss";
 .imagem{
-  padding: 20px 0 20px 0;
 }
 .container {
   display: flex;
@@ -8,7 +7,12 @@
     display: flex;
     gap: 217px;
     margin: 0 0 0 0;
-    padding: 20px 0 20px 217px;
+    padding: 0 0 20px 217px;
+    .contato{
+      display: flex;
+      flex-direction: column;
+    }
+
     .mapa {
       align-items: left;
       justify-content: center;
@@ -51,14 +55,67 @@
   border-radius: 8px;
   width: 100%;
   text-align: center;
+      .endereço{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   .copy{
-    padding: 0 0 0 115px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
   }
   .contact{
-    padding: 0 115px 0 0 ;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
   }
 }
 
 svg{
   width: 18px;
 }
+
+@media(max-width:1014px){
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  .content{
+      gap: 30px;
+          padding: 0 0 20px 27px;
+
+    }
+  }
+  .container2{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (max-width: 428px) {
+  .container {
+  .content{
+      gap: 30px;
+          padding: 20px 0 20px 27px;
+
+    }
+  }
+
+  .imagem{
+  width: 100%;
+  display: flex;
+  padding: 10px 0 0 0;
+  align-items: center;
+  justify-content: center;
+}
+ }
+

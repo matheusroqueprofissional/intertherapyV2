@@ -1,13 +1,16 @@
 @import "../../global.scss";
+
 .container {
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
-
+  display: flex;
+  flex-direction: column;
   .nossa-missao {
     .imagem-missao {
       width: 100%;
     }
+
     width: 100%;
     display: flex;
     align-items: center;
@@ -16,16 +19,17 @@
     .texto-missao {
       padding: 0 0 0 0px;
       text-align: left;
-      h2 {
-      }
+
+      h2 {}
+
       ul {
         list-style: none;
         padding: 0;
         margin: 0;
+
         li {
           display: flex;
           padding-left: 0;
-          margin-bottom: 10px;
           line-height: 1.5;
 
           .quadrado-laranja {
@@ -47,23 +51,30 @@
   }
 
   .nossas-especialidades {
+    h2{
+          padding: 40px 0 10px 0;
+
+    }
     width: 100%;
     text-align: center;
 
     .especialidades-grid {
       gap: 28px;
-      display: flex;
-      justify-content: center;
+  display: flex;
+  flex-wrap: wrap;      justify-content: center;
       background-color: rgba(255, 255, 255, 0.9);
       padding: 50px 20px 50px 20px;
       border-radius: 8px;
 
       .especialidade-item {
         background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         border-radius: 8px;
         padding: 0 15px 0 15px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
         width: 100%;
         max-width: 407px;
 
@@ -72,18 +83,21 @@
           height: auto;
           margin-bottom: 10px;
         }
+
         h3 {
-          font-family: 'Epilogue',sans-serif;
+          font-family: 'Epilogue', sans-serif;
           font-size: 24px;
-          font-weight:bold;
+          font-weight: bold;
           letter-spacing: 2px;
           color: #2DABE5;
         }
-        span{
+
+        span {
           font-size: 85px;
           font-variation-settings: 'FILL' 1;
           color: #2DABE5;
         }
+
         p {
           color: #333;
           font-size: 12px;
@@ -100,6 +114,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     .imagem-missao {
       width: 100%;
       display: flex;
@@ -116,21 +131,36 @@
   }
 }
 
+@media screen and (max-width:668px){
+
+}
 @media screen and (max-width: 502px) {
 
-.especialidades-grid{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+  .especialidades-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-@media screen and (max-width: 833px) {
-.material-symbols-outlined{
-  width: 4px;
-  font-size: 1px;
-}
-}
+  @media screen and (max-width: 833px) {
+    .material-symbols-outlined {
+      font-size: 1px;
+    }
+
+    @media (max-width: 428px) {
+      span {
+        padding: 0 75px 0 0;
+
+      }
+
+      li span {
+        padding: 0;
+      }
+    }
+  }
+
+
+
 
 }
-

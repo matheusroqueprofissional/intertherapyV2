@@ -2,6 +2,8 @@
   <div class="buttons">
     <button *ngFor="let cor of cores, let index = index" mat-button [ngStyle]="{'background-color': cor,'color':'white','font-family':'Epilogue','font-weight': 'bold','font-size': 18,'cursor': 'pointer',
     'border': 'none'}" (click)="changeService(about[index])">{{about[index]}}</button>
+      <button (click)="logout()">Logout</button>
+
   </div>
   @if (isLoading) {
     <mat-spinner></mat-spinner>

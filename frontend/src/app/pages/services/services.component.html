@@ -8,7 +8,7 @@
   </div>
   <router-outlet></router-outlet>
   <div *ngIf="!isLoading; else loading">
-    <div *ngIf="!failLoad; else failLoadTemplate">
+    <div *ngIf="!failLoad; else loading">
       <div class="container">
         <div class="grid-container">
           <div class="container2" *ngFor="let item of combinedData">
@@ -24,8 +24,8 @@
     </div>
   </div>
 </section>
-<ng-template #loading>
-  <mat-spinner></mat-spinner>
+<ng-template style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;" #loading>
+  <mat-spinner style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;"></mat-spinner>
 </ng-template>
 
 <ng-template #failLoadTemplate>

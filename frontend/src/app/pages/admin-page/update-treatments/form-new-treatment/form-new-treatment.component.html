@@ -2,7 +2,7 @@
 <mat-dialog-content>
 
 
-<form [formGroup]="createTreatmentForm" class="example-form">
+<form [formGroup]="createTreatmentForm" class="example-form" >
   <!--ToDo Nome-->
   <mat-form-field class="example-full-width">
     <mat-label>Nome</mat-label>
@@ -58,7 +58,12 @@
       <mat-error>Email is <strong>required</strong></mat-error>
     }
   </mat-form-field>
-
+<mat-spinner *ngIf="loading"></mat-spinner>
   <button mat-stroked-button (click)="onSubmit()" type="submit"> enviar </button>
+
 </form>
 </mat-dialog-content>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

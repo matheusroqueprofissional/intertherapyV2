@@ -11,7 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class FooterComponent {
 
-  links = ['Sobre nós', 'services', 'team'];
+  links = ['Sobre nós', 'services', 'contact'];
 
   constructor(private router: Router) {}
 

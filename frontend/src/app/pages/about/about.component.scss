@@ -1,56 +1,145 @@
 @import url("../../global.scss");
 
-.content{
+.content {
   width: 100%;
 }
-.container{
+
+.container {
   width: 100%;
   padding: 85px 0 0 0;
 
-  .image{
+  .image {
     width: auto;
     padding: 0 115px 0 0;
   }
 
-  .content{
-    width: 100%;
+  .content {
     padding: 0 45px 0 115px;
-    .paragraphs{
-      .subparagraph{
+
+    .paragraphs {
+      .subparagraph {
         font-size: 18px;
       }
     }
   }
 }
 
-.vision_and_values{
+.vision_and_values {
   width: 100%;
   gap: 20px;
+  padding: 20px;
 
-  .vision,.values{
+  .vision,
+  .values {
 
     background-color: white;
     border: 1px solid #000000;
     height: auto;
     border-radius: 11px;
-    min-width: 650px;
     max-width: 650px;
   }
-  .values{
-    .content{
+
+  .values {
+    display: flex;
+    flex-wrap: wrap;
+    .content {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      padding:0 100px 0 50px;
+      padding: 0 100px 0 50px;
       font-size: 18px;
 
-      li{
+      li {
         padding-top: 12.5px;
       }
     }
+
     padding: 32px 32px 0 38px;
   }
-  .vision{
+
+  .vision {
     padding: 32px 137px 0 38px;
+  }
+}
+
+
+@media (max-width: 428px) {
+  .vision_and_values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .values {
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+      padding: 0 0 0 10px;
+    }
+
+    .image {
+      width: 100%;
+      padding: 0 0 0 0;
+
+      img {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+
+}
+
+@media(max-width:1208px){
+  .image {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+    }
+}
+
+@media(max-width:1108px){
+  .container{
+      .image {
+    width: auto;
+    padding: 0 0 0 0;
+  }
+  }
+}
+
+
+@media(max-width:1208px) {
+  .vision_and_values{
+    flex-wrap: wrap;
+  }
+   .container {
+    display: flex;
+    flex-direction: column;
+
+
+  }
+}
+
+@media(max-width:1000px){
+  .container{
+  .content{
+    text-align: center;
+    padding: 0 50px 0 50px;
+  }
   }
 }
