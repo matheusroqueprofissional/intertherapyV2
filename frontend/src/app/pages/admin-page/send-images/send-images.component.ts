@@ -59,7 +59,6 @@ export class SendImagesComponent implements OnInit {
   async ngOnInit() {
     this.isLoading = true;
     this.previewUrl = '../../../assets/images/admin/noImage.png';
-    console.log(this.sendImageForm.value.title);
   }
 
   toggleEdicao() {

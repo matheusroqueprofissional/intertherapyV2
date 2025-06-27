@@ -41,6 +41,7 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    cursor: pointer;
   }
 
   input,
@@ -54,11 +55,11 @@
     box-sizing: border-box;
     margin-bottom: 15px;
     font-size: 14px;
+    cursor: pointer;
   }
 
   button {
     background-color: #f25c05;
-    /* Cor laranja do botão */
     color: white;
     padding: 12px 24px;
     border: none;
@@ -110,7 +111,7 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .addressWrite{
     flex-wrap: wrap;
   }

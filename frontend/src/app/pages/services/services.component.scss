@@ -1,3 +1,9 @@
+.ng-star-inserted{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header{
   background-image: url("../../../assets/images/_services/servicesSubject.svg");
   background-repeat: no-repeat;
@@ -43,11 +49,13 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding: 50px 311px 84px 301px;
+  padding: 50px 150px 84px 150px;
   color: white;
-
+  flex-wrap: wrap;
 }
+
 button {
+  width: auto;
   color: white;
 }
 
@@ -109,3 +117,5 @@ h1{
 .btn{
   background-color: #2DABE5;
 }
+
+

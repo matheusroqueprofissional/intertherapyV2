@@ -14,6 +14,8 @@ import { SnackbarComponent } from '../../shared/components/snackbar/snackbar.com
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
@@ -25,12 +27,14 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    CommonModule
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-
+  isloading:boolean = false;
   sendemailForm!: FormGroup;
   email: Email | undefined;
   durationInSeconds = 5;
@@ -63,7 +67,6 @@ export class ContactComponent {
 
     this.contactService.sendEmail(formData).subscribe({
       next: () => {
-        console.log('Email enviado com sucesso!');
         this.openSnackBar('Email enviado com sucesso!', 'success');
         this.sendemailForm.reset();
       },

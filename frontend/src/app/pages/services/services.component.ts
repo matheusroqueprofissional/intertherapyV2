@@ -37,7 +37,7 @@ export class ServicesComponent {
         private storageService: StorageService,
         private treatmentsService: TreatmentsService
   ) {}
-  isLoading = false;
+  isLoading = true;
   treatments: Treatments[] = [];
   images: { name: string; url: string; timeCreated: string }[] = [];
   failLoad = false;
@@ -60,7 +60,6 @@ export class ServicesComponent {
     this.getTreatments();
     try {
       this.images = await this.storageService.listTreatments();
-      console.log('Imagens carregadas (ordenadas):', this.images);
       this.combinedData = this.images.map((image, index) => ({
         image,
         treatment: this.treatments[index] || null,
@@ -76,28 +75,41 @@ export class ServicesComponent {
       console.error('Erro ao carregar imagens:', error);
       this.images = [];
     } finally {
-      this.isLoading = false;
+      this.isLoading = true;
     }
 
   }
 
   getTreatments() {
-    this.treatmentsService.getTreatments().subscribe({
+    this.failLoad = false;
+    this.isLoading = true;
+      setTimeout(() => {
+            this.isLoading = true;
+
+         this.treatmentsService.getTreatments().subscribe({
       next: (response) => {
         this.treatments = response;
-        console.log(this.treatments);
+        this.isLoading=false
+        if(this.treatments.length === 0 )
+        {
+          this.isLoading = false;
+          this.failLoad = true;
+          console.log("no data on database")
+        }
       },
       error: (err) => {
         console.error('erro ao buscar tratamentos', err);
+        this.isLoading=false
         this.failLoad = true;
         console.log(this.failLoad);
       },
     });
+  }, 5000);
+
   }
   changeService(about: string) {
     this.isLoading = true;
     this.router.navigate(['services/' + about]);
-    console.log(about);
     this.isLoading = false;
   }
 }

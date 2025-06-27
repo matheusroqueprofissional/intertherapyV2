@@ -20,7 +20,11 @@ import { ServicesContentComponent } from './pages/services/subpages/services-con
 export const routes: Routes = [
   { path: 'inicio', redirectTo: '' },
   { path: '', component: DashboardComponent },
+  { path: 'sobre nos', redirectTo: 'about', pathMatch:"full"},
+  { path: 'about us', redirectTo: 'about', pathMatch:"full"},
   { path: 'about', component: AboutComponent },
+  { path: 'serviços', redirectTo: 'services', pathMatch:"full"},
+  { path: 'servicos', redirectTo: 'services', pathMatch:"full"},
   {
   path: 'services',
   component: ServicesComponent,
@@ -38,6 +42,7 @@ export const routes: Routes = [
 },
 
   { path: 'team', component: TeamComponent },
+  { path: 'contato', redirectTo:"contact",pathMatch:'full'},
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   {

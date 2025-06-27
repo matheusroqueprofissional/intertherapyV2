@@ -52,7 +52,6 @@ export class AdminPageComponent implements OnInit {
   changeService(about: string) {
     this.isLoading = true
     this.router.navigate(['admin/' + about]);
-    console.log(about);
     this.isLoading = false
   }
 
