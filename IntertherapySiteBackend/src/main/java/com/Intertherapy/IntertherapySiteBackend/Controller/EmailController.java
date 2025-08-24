@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.w3c.dom.events.EventException;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://intertherapy.com.br")
 @RequestMapping("/email")
 public class EmailController {
 
@@ -28,17 +28,17 @@ public class EmailController {
                
         emailservice.enviarEmailTexto(
                 sendemail.from(),
-                sendemail.about(),
+                sendemail.subject(),
                 "formulario de contato: \n\n"+
                 "\nNome completo:"+sendemail.name()+
                 "\nEmail:"+sendemail.from()+
-                "\nAssunto:"+sendemail.about()+
+                "\nAssunto:"+sendemail.subject()+
                 "\nMensagem:"+sendemail.message() 
         );
         return new ResponseEntity<>(new ApiResponse(true, "Email enviado com sucesso!"), HttpStatus.OK);
         }
         catch(Exception e){
-            System.out.println("erro ao enviar email: "+e);
+            System.out.println("erro ao enviar email: ");
             return new ResponseEntity<>(new ApiResponse(false, "Erro ao enviar email: " + e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);        }
     }
 }

@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.HashMap;
 import org.springframework.http.ResponseEntity;
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://intertherapy.com.br")
 @RequestMapping("/admin")
 public class AdminController {
 
