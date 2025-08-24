@@ -9,10 +9,10 @@ import { Email } from '../../../interfaces/email';
 export class ContactService {
   private http = inject(HttpClient); // Use inject() para HttpClient
 
-  private url = 'http://127.0.0.1:8080/admin/';
+  private url = 'https://api.intertherapy.com.br/admin/';
   private baseget = this.url + 'GetTreatments';
   private basepost = this.url + 'RegisterTreatment';
-  private emailUrl = 'http://127.0.0.1:8080/email/sendemail'; // URL para enviar email
+  private emailUrl = 'https://api.intertherapy.com.br/email/sendemail'; // URL para enviar email
 
   /**
    * Envia um email através da API.

@@ -10,7 +10,7 @@ export class TreatmentsService {
 
   constructor(private http:HttpClient) { }
 
-  url = "http://127.0.0.1:8080/admin/"
+  url = "https://api.intertherapy.com.br/admin/"
   baseget = this.url+"GetTreatments"
   basepost = this.url+"RegisterTreatment"
 
@@ -19,6 +19,6 @@ export class TreatmentsService {
   }
 
   postTreatments(treatments: Treatments): Observable<any> {
-    return this.http.post<Treatments[]>('http://127.0.0.1:8080/admin/RegisterTreatment', treatments)
+    return this.http.post<Treatments[]>('https://api.intertherapy.com.br/admin/RegisterTreatment', treatments)
   }
 }
