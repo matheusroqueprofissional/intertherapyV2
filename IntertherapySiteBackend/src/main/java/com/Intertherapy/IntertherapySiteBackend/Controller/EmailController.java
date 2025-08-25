@@ -29,11 +29,11 @@ public class EmailController {
         emailservice.enviarEmailTexto(
                 sendemail.from(),
                 sendemail.subject(),
-                "formulario de contato: \n\n"+
-                "\nNome completo:"+sendemail.name()+
-                "\nEmail:"+sendemail.from()+
-                "\nAssunto:"+sendemail.subject()+
-                "\nMensagem:"+sendemail.message() 
+                "Formulario de contato: \n\n"+
+                "Assunto:\n"+sendemail.subject()+
+                "\n\nNome completo:\n"+sendemail.name()+
+                "\n\nEmail:\n"+sendemail.from()+
+                "\n\nteste teste teste Mensagem:\n"+sendemail.message() 
         );
         return new ResponseEntity<>(new ApiResponse(true, "Email enviado com sucesso!"), HttpStatus.OK);
         }
