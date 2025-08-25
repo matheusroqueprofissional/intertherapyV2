@@ -21,7 +21,7 @@ public class EmailController {
 
     @Autowired
     private emailService emailservice;
-
+    @CrossOrigin(origins = "https://intertherapy.com.br")
     @PostMapping("/sendemail")
     public ResponseEntity<ApiResponse> sendEmail(@RequestBody sendEmailRecord sendemail ) {
         try{
