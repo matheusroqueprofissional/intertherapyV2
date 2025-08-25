@@ -33,7 +33,7 @@ public class EmailController {
                 "Assunto:\n"+sendemail.subject()+
                 "\n\nNome completo:\n"+sendemail.name()+
                 "\n\nEmail:\n"+sendemail.from()+
-                "\n\nteste teste teste Mensagem:\n"+sendemail.message() 
+                "\n\nMensagem:\n"+sendemail.message() 
         );
         return new ResponseEntity<>(new ApiResponse(true, "Email enviado com sucesso!"), HttpStatus.OK);
         }
