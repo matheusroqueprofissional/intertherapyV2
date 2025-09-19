@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.w3c.dom.events.EventException;
 
 @RestController
-@CrossOrigin(origins = "https://intertherapy.com.br")
-@RequestMapping("/email")
+@CrossOrigin(origins = {
+  "https://intertherapy.com.br",
+  "https://www.intertherapy.com.br",
+  "https://api.intertherapy.com.br",
+  "https://www.api.intertherapy.com.br"
+})@RequestMapping("/email")
 public class EmailController {
 
     @Autowired
